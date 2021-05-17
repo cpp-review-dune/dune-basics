@@ -1,6 +1,6 @@
 \documentclass[
 	spanish,
-	10pt,
+	9pt,
 	xcolor=table,
 	handout,
 	aspectratio=1610,
@@ -31,20 +31,31 @@
 \author{}
 \institute[]
 {
+  \noindent
+  Practique los ejemplos en Gitpod
+
+	\href{https://gitpod.io\#/https://github.com/cpp-review-dune/dune-basics}{\includegraphics[width=4.5cm]{open-in-gitpod}}	
+	
+  \vfill
+
+  \begin{minipage}{0.12\paperwidth}
+    Disponible en
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}{0.18\paperwidth}
+    \href{https://github.com/cpp-review-dune}{\includegraphics[width=1.2cm]{GitHub-Mark-120px-plus}}
+  \end{minipage}
+
+  \vfill
+
+  \begin{minipage}{0.26\paperwidth}
+    ¡Únete al grupo en Telegram!
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}{0.04\paperwidth}
+    \href{https://t.me/joinchat/OsfYP1xnFlxjN2Ix}{\includegraphics[width=1.2cm]{telegram-logo}}
+  \end{minipage}
   
-  \begin{center}
-    Practique en Gitpod
-    \href{https://gitpod.io\#/https://github.com/cpp-review-dune/dune-basics}{\includegraphics[width=4.5cm]{open-in-gitpod}}
-	\end{center}
-
-  \begin{center}
-  Disponible en \href{https://github.com/cpp-review-dune}{\includegraphics[width=0.6cm]{GitHub-Mark-120px-plus}}
-  \end{center}
-
-  \begin{center}
-  ¡Únete al grupo en Telegram!
-  \href{https://t.me/joinchat/OsfYP1xnFlxjN2Ix}{\includegraphics[width=0.6cm]{telegram-logo}}
-  \end{center}
 }
 
 \begin{document}
@@ -62,8 +73,7 @@
 \begin{frame}
   \frametitle{Conociendo el sistema operativo \href{https://archlinux.org}{Arch Linux}}
 
-  Es una distribución GNU/Linux de propósito general, desarrollada independientemente para procesadores x86-64, que se adhiere a los principios de simplicidad, modernidad, pragmatismo, centrado en usuarios y versatilidad.
-  % \footnote{El líder del proyecto es \href{https://wiki.archlinux.org/title/User:Anthraxx}{\texttt{Anthraxx}}, desarrollador alemán del kernel \href{https://github.com/anthraxx/linux-hardened}{\texttt{linux-hardened}}.}
+  Es una distribución GNU/Linux de propósito general, desarrollada\footnote{El líder del proyecto es \href{https://wiki.archlinux.org/title/User:Anthraxx}{\texttt{Anthraxx}}, desarrollador alemán del kernel \href{https://github.com/anthraxx/linux-hardened}{\texttt{linux-hardened}}.} independientemente para procesadores x86-64, que se adhiere a los principios de simplicidad, modernidad, pragmatismo, centrado en usuarios y versatilidad.
 
   \
 
@@ -151,40 +161,37 @@
   \end{lstlisting}
 \end{frame}
 
+%\lstinputpath{../../../sandbox}
+
 \begin{frame}[fragile]
   \frametitle{Classes}
-  \begin{cppcode}
-    class Point2D {
-        public:
-        Point2D(double x_, double y_)
-        : x(x_), y(y_)
-        {}
 
-        double norm() const {
-            return sqrt(x*x + y*y);
-          }
+  \lstinputlisting[
+    caption={Programa \texttt{hello-linux.cc}.},
+    label=hello-linux.cc,
+  ]{../../../sandbox/hello-linux.cc}
 
-        void add(const Point2D& p) {
-            x += p.x;
-            y += p.y;
-          }
 
-        private:
-        double x, y;
-      };
-  \end{cppcode}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Classes}
-  \begin{cppcode}
-    /* C++ */
-    int main() {
-        std::cout << "Hello World"; // prints Hello World
-        this -> *point;
-        return 0;
-      }
-  \end{cppcode}
+
+  \lstinputlisting[
+    caption={Programa \texttt{dune-basics.cc}.},
+    label=dune-basics.cc,
+  ]{../../../src/dune-basics.cc}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Classes}
+
+  \lstinputlisting[
+    caption={Programa \texttt{dune-basics.cc}.},
+    label=dune-basics.cc,
+  ]{../../../sandbox/dune-math-constants.cc}
+
 \end{frame}
 
 \end{document}

@@ -1,5 +1,5 @@
 ## Latexmk initialization file.
-
+## https://raw.githubusercontent.com/dokempf/UseLatexMk/dae39130f1e585b3970ff80edbf8acb227ba9fab/latexmkrc.cmake
 $ENV{'TZ'}='America/Lima';
 
 # Write pdflatex-generated auxiliary files (aux, log, etc.) in a separate folder

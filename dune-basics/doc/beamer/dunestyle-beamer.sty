@@ -17,6 +17,7 @@
 \RequirePackage{calc}
 \RequirePackage{fontspec}
 %\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{QTHelvet-Black}
 \setmonofont{Fira Code}[
   Contextuals=Alternate,  % Activate the calt feature
   Scale=MatchLowercase
@@ -32,7 +33,7 @@
 %\usetikzlibrary{decorations.pathmorphing,fit,shapes,arrows,intersections,calc,trees,positioning}
 \usetikzlibrary{positioning}
 
-\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+%\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
 
 % by default give only current page number
 \newcommand*{\@@insert@framenumber}{\insertframenumber}
@@ -52,7 +53,9 @@
   at (current page.north) {~};
   \node[anchor=west,inner sep=5mm,color=duneorange]
   at (header.west) {%
-    \fontfamily{phv}\selectfont\LARGE\textbf{DUNE/PDELab Tutorials}};
+    \fontfamily{phv}
+    \selectfont\LARGE
+    \textbf{DUNE/PDELab Tutorials}};
 }
 % decide whether the page number should show up
 \DeclareVoidOption{course}{
@@ -62,7 +65,9 @@
       \includegraphics[width=\paperwidth]{duneslides-logo}};
     \node[anchor=west,inner sep=5mm,color=duneorange]
     at (header.west) {%
-      \fontfamily{phv}\selectfont\LARGE\textbf{DUNE/PDELab Course \the\year}};
+      \fontfamily{phv}
+      \selectfont\LARGE
+      \textbf{DUNE/PDELab Course \the\year}};
   }
 }
 
@@ -73,7 +78,10 @@
       \includegraphics[width=\paperwidth]{duneslides-logo}};
     \node[anchor=west,inner sep=5mm,color=c++reviewduneblue!20!c++reviewduneverde]
     at (header.west) {%
-      \fontfamily{phv}\selectfont\LARGE\textbf{C++ Review DUNE}};
+      \sffamily
+      %\fontfamily{phv}
+      \selectfont\LARGE
+      \textbf{C++ Review DUNE}};
   }
 }
 
@@ -95,9 +103,23 @@
 % switch off the navigation symbols
 \beamertemplatenavigationsymbolsempty
 
-\setbeamerfont{title}{size=\huge,family=\fontfamily{phv},series=\mdseries}
-\setbeamerfont{subtitle}{size=\Large}
-\setbeamerfont{frametitle}{family=\fontfamily{phv}}
+\setbeamerfont{title}{
+  size=\Huge,
+  % family=\sffamily,
+  %family=\fontfamily{phv},
+  %series=\mdseries
+  series=\bfseries
+}
+\setbeamerfont{subtitle}{
+  size=\LARGE,
+  family=\sffamily,
+  series=\mdseries
+}
+\setbeamerfont{frametitle}{
+  family=\sffamily,  
+  %family=\fontfamily{phv}
+  series=\mdseries
+}
 
 % headline
 \setbeamertemplate{headline}{%
@@ -282,6 +304,8 @@
 \RequirePackage{verbatim}
 \RequirePackage{listings}
 \RequirePackage{lstfiracode}
+
+\renewcommand{\lstlistingname}{Listado}
 % \lstset{language=C++, basicstyle=\ttfamily,
 %   keywordstyle=\color{black}\bfseries, tabsize=4, stringstyle=\ttfamily,
 %   commentstyle=\it, extendedchars=true, escapeinside={/*@}{@*/}}
