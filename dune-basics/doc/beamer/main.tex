@@ -33,17 +33,17 @@
 {
   
   \begin{center}
-    Practique en GitPod
+    Practique en Gitpod
     \href{https://gitpod.io\#/https://github.com/cpp-review-dune/dune-basics}{\includegraphics[width=4.5cm]{open-in-gitpod}}
 	\end{center}
 
   \begin{center}
-  Disponible en \href{https://github.com/cpp-review-dune}{\includegraphics[width=0.5cm]{GitHub-Mark-120px-plus}}
+  Disponible en \href{https://github.com/cpp-review-dune}{\includegraphics[width=0.6cm]{GitHub-Mark-120px-plus}}
   \end{center}
 
   \begin{center}
   ¡Únete al grupo en Telegram!
-  \href{https://t.me/joinchat/OsfYP1xnFlxjN2Ix}{\includegraphics[width=0.5cm]{telegram-logo}}
+  \href{https://t.me/joinchat/OsfYP1xnFlxjN2Ix}{\includegraphics[width=0.6cm]{telegram-logo}}
   \end{center}
 }
 
@@ -79,16 +79,16 @@
     \centering\footnotesize
     \begin{tabular}{cccp{50pt}cc}
       \toprule
-      Acción             & Arch                    & Red Hat/Fedora          & Debian/Ubuntu                               & SLES/openSUSE           & Gentoo
+      Acción             & Arch                    & Red Hat/Fedora          & Debian/Ubuntu                                          & SLES/openSUSE           & Gentoo
       \tabularnewline
       \midrule
-      Instala paquetes   & \lstinline|pacman -S|  & \lstinline|dnf install|  & \lstinline|apt install|                      & \lstinline|zypper install|  & \lstinline|emerge -a|
+      Instala paquetes   & \lstinline|pacman -S|  & \lstinline|dnf install|  & \lstinline|apt install|                                 & \lstinline|zypper install|  & \lstinline|emerge -a|
       \tabularnewline
-      Elimina paquetes   & \lstinline|pacman -Rs|  & \lstinline|dnf remove|  & \lstinline|apt remove|                      & \lstinline|zypper remove|  & \lstinline|emerge -C|
+      Elimina paquetes   & \lstinline|pacman -Rs|  & \lstinline|dnf remove|  & \lstinline|apt remove|                                 & \lstinline|zypper remove|  & \lstinline|emerge -C|
       \tabularnewline
-      Busca paquetes     & \lstinline|pacman -Ss| & \lstinline|dnf search| & \lstinline|apt search|                     & \lstinline|zypper search| & \lstinline|emerge -S|
+      Busca paquetes     & \lstinline|pacman -Ss| & \lstinline|dnf search| & \lstinline|apt search|                                & \lstinline|zypper search| & \lstinline|emerge -S|
       \tabularnewline
-      Actualiza paquetes & \lstinline|pacman -Syu| & \lstinline|dnf upgrade| & \lstinline|apt update \&\&|\newline apt upgrade & \lstinline|zypper update| & \lstinline|emerge -u world|
+      Actualiza paquetes & \lstinline|pacman -Syu| & \lstinline|dnf upgrade| & \lstinline|apt update \&\&|\newline\lstinline|apt upgrade| & \lstinline|zypper update| & \lstinline|emerge -u world|
       \tabularnewline
       \bottomrule
     \end{tabular}
@@ -121,6 +121,70 @@
 
   En esta ocasión hemos elegido Arch Linux como ambiente de trabajo porque tiene disponible una gran variedad de módulos de DUNE.
   Es recomendable habilitar el repositorio \href{https://wiki.archlinux.org/title/Unofficial\_user\_repositories\#arch4edu}{\texttt{arch4edu}}\footnote{Administrado por Jingbei Li de la Universidad de Tsinghua.}.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Usando el emulador de terminal}
+  % Una consola es un display del sistema
+  % En todo lo que sigue, usaremos el shell \lstinline{bash}.
+
+  % GNU General Public License v2.0
+  % GNU Lesser General Public License v2.1
+  % BSD 3-Clause "New" or "Revised" License
+
+  % El terminal te da acceso al shell, que nos da acceso al sistema operativo subyacente.
+  % El shell, sabe interactuar entre el usuario y el sistema operativo.
+
+  % CLI Command Line Interface
+\end{frame}
+
+\begin{frame}
+  % pwd
+  % El cursor parpadeante al final de la línea es donde se ingresan los comandos basados ​​en texto. Puede comenzar a experimentar con un comando simple, Imprimir directorio de trabajo (pwd), que muestra la carpeta actual en la que se encuentra en la pantalla. Escriba pwd y presione Entrar.
+
+  % Todos los comandos que ingresa funcionan de la misma manera: ingresa el comando, incluye cualquier parámetro para extender el uso del comando y presiona Enter para ejecutar la línea de comando que ingresó. Escribe en la Terminal: uname -a y presiona Enter. Esto muestra información del sistema con respecto a Mint
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{lstlisting}
+    gitpod ~/dune-basics $ cd
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Classes}
+  \begin{cppcode}
+    class Point2D {
+        public:
+        Point2D(double x_, double y_)
+        : x(x_), y(y_)
+        {}
+
+        double norm() const {
+            return sqrt(x*x + y*y);
+          }
+
+        void add(const Point2D& p) {
+            x += p.x;
+            y += p.y;
+          }
+
+        private:
+        double x, y;
+      };
+  \end{cppcode}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Classes}
+  \begin{cppcode}
+    /* C++ */
+    int main() {
+        std::cout << "Hello World"; // prints Hello World
+        this -> *point;
+        return 0;
+      }
+  \end{cppcode}
 \end{frame}
 
 \end{document}
