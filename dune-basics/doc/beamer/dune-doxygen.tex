@@ -1,0 +1,163 @@
+\input{dune-common-preamble-doxygen}
+
+\begin{document}
+
+\frame[plain,noframenumbering]{\titlepage}
+
+\begin{frame}
+	\frametitle{Objetivos de esta introdución}
+	A number of advanced.
+	\begin{itemize}
+		\item Correr los \href{https://github.com/orgs/cpp-review-dune/packages}{imágenes prediseñadas} con el programa \lstinline{docker} en sistemas tipo Unix.
+		\item Crear una malla con \lstinline{gmsh} a través de la API (C/C++, Python, Julia).
+		\item Realizar los ejemplos resueltos del \textsc{Dune book}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ideas para explicar Doxygen}
+	\begin{description}
+	\item Utilizar la documentación de Doxygen.
+	\item Explicar el uso del manual y la configuración.
+	\item .
+	\end{description}
+\end{frame}
+
+\begin{frame}
+
+	En esta ocasión hemos elegido Arch Linux como ambiente de trabajo porque tiene disponible una gran variedad de módulos de DUNE.
+	Es recomendable habilitar el repositorio \href{https://wiki.archlinux.org/title/Unofficial\_user\_repositories\#arch4edu}{\texttt{arch4edu}}\footnote{Administrado por Jingbei Li de la Universidad de Tsinghua.}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Usando el emulador de terminal}
+\end{frame}
+
+\begin{frame}[fragile]\LARGE
+\begin{lstlisting}
+gitpod ~/dune-basics $ tldr doxygen
+
+  doxygen
+  La documentación del sistema para varios lenguajes se puede encontrar en: 
+   http://www.doxygen.nl.
+
+  - Para generar un archivo o plantilla de configuración utilice el comando 'Doxyfile':
+    doxygen -g
+
+  - Para generar un archivo o plantilla de configuración con un nombre específico 'MiDoxygen':
+    doxygen -g MiDoxygen
+
+  - Genera una plantilla de un archivo de configuración:
+    doxygen -g ruta/a/archivo_de_configuracion
+
+  - Genera documentación usando un archivo de configuración existente:
+    doxygen ruta/a/archivo_de_configuracion
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\LARGE
+En caso de no tener instalado en Arch Linux el programa utilice el comando:
+\begin{lstlisting}
+  gitpod ~/dune-basics $ yay -Sy doxygen --noconfirm
+\end{lstlisting}
+
+\begin{lstlisting}
+gitpod ~/dune-basics $ doxygen -g MiDoxigen
+
+Configuration file 'MiDoxigen' created.
+
+Now edit the configuration file and enter
+
+  doxygen MiDoxigen
+
+to generate the documentation for your project
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+El archivo \lstinline{MiDoxygen} es un archivo de texto plano con alrededor de $2600$ líneas, que contiene la configuración, su estructura es del tipo clave valor, con líneas comentadas por \#, a continuación explicaremos algunas de ellas para hacer una configuración básicas, en caso de necesitar más información dirijase a la página: \url{https://www.doxygen.nl/manual/index.html}.
+% TODO: Poner la referencia [1]
+\end{frame}
+
+\begin{frame}[fragile]\LARGE
+\begin{lstlisting}
+# El PROJECT_NAME puede ser una palabra simple o una secuencia de palabras 
+# entre comillas dobles (a menos que usted utilice Doxywizard)  esto es para 
+# identificar el proyecto para el que se va a generar la documentación.
+# Este nombre es usado en el título de la mayoría de las páginas generadas y en pequeños otros lugares.
+# El valor por defecto es: My Project, y se le puede dar el nombre de su proyecto.
+
+PROJECT_NAME           = "Dune-project-cpp-review"
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	Si se utiliza el programa \lstinline{doxywizard} puede configurar los parámetros del archivo \lstinline{doxyfile}.
+
+	\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.2]{wizard_capture.png}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes}
+
+	\lstinputlisting[
+		caption={Programa \texttt{hello-linux.cc}.},
+		label=hello-linux.cc,
+	]{../../../sandbox/hello-linux.cc}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes}
+
+	\lstinputlisting[
+		caption={Programa \texttt{dune-basics.cc}.},
+		label=dune-basics.cc,
+	]{../../../src/dune-basics.cc}
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes}
+
+	\lstinputlisting[
+		caption={Programa \texttt{dune-basics.cc}.},
+		label=dune-basics.cc,
+	]{../../../sandbox/dune-math-constants.cc}
+
+\end{frame}
+%https://archlinux.org/logos/archlinux-icon-crystal-256.svg
+
+\begin{frame}\transblindsvertical
+	\frametitle{Referencias}
+	%------------------------------------------------------------ 1
+	\only<1>{
+		\begin{itemize}
+			\item Libros
+			      \nocite{*}
+			      \printbibliography[heading=none,keyword=book]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 2
+	\only<2>{
+		\begin{itemize}
+			\item Artículos
+			      \printbibliography[heading=none,keyword=paper]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 3
+	\only<3>{
+		\begin{itemize}
+			\item Sitios web
+			      \printbibliography[heading=none,keyword=online]
+		\end{itemize}
+	}
+\end{frame}
+
+\end{document}
