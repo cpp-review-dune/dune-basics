@@ -1,7 +1,6 @@
 // Tomado de https://stackoverflow.com/a/66161001
 
 #include <sys/utsname.h>
-
 #include <iostream>
 
 // un pequeño ayudante para mostrar el contenido de una estructura utsname:
