@@ -1,4 +1,4 @@
-\input{dune-common-preamble-doxygen}
+\input{dune-doxygen-preamble}
 
 \begin{document}
 
@@ -19,12 +19,10 @@
 	\begin{description}
 	\item Utilizar la documentación de Doxygen.
 	\item Explicar el uso del manual y la configuración.
-	\item .
 	\end{description}
 \end{frame}
 
 \begin{frame}
-
 	En esta ocasión hemos elegido Arch Linux como ambiente de trabajo porque tiene disponible una gran variedad de módulos de DUNE.
 	Es recomendable habilitar el repositorio \href{https://wiki.archlinux.org/title/Unofficial\_user\_repositories\#arch4edu}{\texttt{arch4edu}}\footnote{Administrado por Jingbei Li de la Universidad de Tsinghua.}.
 \end{frame}
@@ -37,29 +35,28 @@
 \begin{lstlisting}
 gitpod ~/dune-basics $ tldr doxygen
 
-  doxygen
-  La documentación del sistema para varios lenguajes se puede encontrar en: 
-   http://www.doxygen.nl.
+doxygen
+La documentación del sistema para varios lenguajes se puede encontrar en: 
+	http://www.doxygen.nl.
 
-  - Para generar un archivo o plantilla de configuración utilice el comando 'Doxyfile':
-    doxygen -g
+- Para generar un archivo o plantilla de configuración utilice el comando 'Doxyfile':
+	doxygen -g
 
-  - Para generar un archivo o plantilla de configuración con un nombre específico 'MiDoxygen':
-    doxygen -g MiDoxygen
+- Para generar un archivo o plantilla de configuración con un nombre específico 'MiDoxygen':
+	doxygen -g MiDoxygen
 
-  - Genera una plantilla de un archivo de configuración:
-    doxygen -g ruta/a/archivo_de_configuracion
+- Genera una plantilla de un archivo de configuración:
+	doxygen -g ruta/a/archivo_de_configuracion
 
-  - Genera documentación usando un archivo de configuración existente:
-    doxygen ruta/a/archivo_de_configuracion
-
+- Genera documentación usando un archivo de configuración existente:
+	doxygen ruta/a/archivo_de_configuracion
 \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]\LARGE
 En caso de no tener instalado en Arch Linux el programa utilice el comando:
 \begin{lstlisting}
-  gitpod ~/dune-basics $ yay -Sy doxygen --noconfirm
+gitpod ~/dune-basics $ yay -Sy doxygen --noconfirm
 \end{lstlisting}
 
 \begin{lstlisting}
@@ -76,14 +73,18 @@ to generate the documentation for your project
 \end{frame}
 
 \begin{frame}
-El archivo \lstinline{MiDoxygen} es un archivo de texto plano con alrededor de $2600$ líneas, que contiene la configuración, su estructura es del tipo clave valor, con líneas comentadas por \#, a continuación explicaremos algunas de ellas para hacer una configuración básicas, en caso de necesitar más información dirijase a la página: \url{https://www.doxygen.nl/manual/index.html}.
-% TODO: Poner la referencia [1]
+El archivo \lstinline{MiDoxygen} es un archivo de texto plano con
+alrededor de $2600$ líneas, que contiene la configuración, su
+estructura es del tipo clave valor, con líneas comentadas por \#, a
+continuación explicaremos algunas de ellas para hacer una
+configuración básicas, en caso de necesitar más información dirijase
+a la página~\cite{Doxygen2021}.%\url{https://www.doxygen.nl/manual/index.html}
 \end{frame}
 
 \begin{frame}[fragile]\LARGE
 \begin{lstlisting}
 # El PROJECT_NAME puede ser una palabra simple o una secuencia de palabras 
-# entre comillas dobles (a menos que usted utilice Doxywizard)  esto es para 
+# entre comillas dobles (a menos que usted utilice Doxywizard) esto es para 
 # identificar el proyecto para el que se va a generar la documentación.
 # Este nombre es usado en el título de la mayoría de las páginas generadas y en pequeños otros lugares.
 # El valor por defecto es: My Project, y se le puede dar el nombre de su proyecto.
@@ -109,8 +110,6 @@ PROJECT_NAME           = "Dune-project-cpp-review"
 		caption={Programa \texttt{hello-linux.cc}.},
 		label=hello-linux.cc,
 	]{../../../sandbox/hello-linux.cc}
-
-
 \end{frame}
 
 \begin{frame}[fragile]
@@ -132,7 +131,6 @@ PROJECT_NAME           = "Dune-project-cpp-review"
 	]{../../../sandbox/dune-math-constants.cc}
 
 \end{frame}
-%https://archlinux.org/logos/archlinux-icon-crystal-256.svg
 
 \begin{frame}\transblindsvertical
 	\frametitle{Referencias}
