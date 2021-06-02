@@ -54,7 +54,7 @@ La documentación del sistema para varios lenguajes se puede encontrar en:
 \end{frame}
 
 \begin{frame}[fragile]\LARGE
-En caso de no tener instalado en Arch Linux el programa utilice el comando:
+En caso de no tener instalado doxygen en Arch Linux o derivados el programa utilice el comando:
 \begin{lstlisting}
 gitpod ~/dune-basics $ yay -Sy doxygen --noconfirm
 \end{lstlisting}
@@ -100,7 +100,86 @@ PROJECT_NAME           = "Dune-project-cpp-review"
 	\centering
 	\includegraphics[scale=0.2]{wizard_capture.png}
 	\end{figure}
+\end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Usando doxygen con \lstinline{duneproject}}
+Una vez que ya tiene su proyecto dune configurado, automáticamente tendrá el directorio \lstinline{doc/doxygen} que con el comando \lstinline{make doxygen_dune-basics} le generará el directorio \lstinline{build/doc/doxygen/html} con la página de documentación.
+\begin{verbatim}
+├── cmake
+│   └── modules
+│       ├── CMakeLists.txt
+│       └── DuneTestMacros.cmake
+├── CMakeLists.txt
+├── config.h.cmake
+├── doc
+│   ├── CMakeLists.txt
+│   └── doxygen
+│       ├── CMakeLists.txt
+│       └── Doxylocal
+├── dune
+│   ├── CMakeLists.txt
+│   └── test
+│       ├── CMakeLists.txt
+│       └── test.hh
+├── dune.module
+├── dune-test.pc.in
+├── README
+└── src
+    ├── CMakeLists.txt
+    └── dune-test.cc
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{}
+Aeiou.
+\begin{description}
+\item[cmake]%\lstinline{cmake}
+\item[\lstinline{CMakeLists.txt}]
+\item[\lstinline{doc}]
+\item[\lstinline{dune}]
+\item[\lstinline{dune.module}]
+\item[\lstinline{dune-test.pc.in}]
+\item[\lstinline{README}]
+\item[\lstinline{src}]
+\end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+El archivo \lstinline{doc/doxygen/Doxylocal} es generado luego de utilizar el comando \lstinline{duneproject}
+\begin{lstlisting}
+# Este archivo contiene cambios locales en la configuración de doxygen
+# por favor use '+=' para adicionar archivos/directorios a las listas
+
+# El tag INPUT puede ser usado para espcificar los archivos y/o directorios que contienen  
+# los archivos fuentes documentados.  Puede entrar archivos como "miarchivo.cpp" o
+# directorios como "/usr/src/myproject".  Separe archivos o directorios con espacio.
+
+INPUT                 += @top_srcdir@/dune/ \
+                         @srcdir@/bienvenida.txt
+# Vea p.ej dune-grid para ejemplos de la página principal y módulos
+# INPUT                 += @srcdir@/mainpage \
+#                          @srcdir@/modules
+
+# El tag EXCLUDE puede ser usado para especificar archivos y/o directorios que deban
+# ser excluidos desde los archivos fuente INPUT. De esta forma puedes fácilmente excluir un
+# subdirectorio desde un árbol de directorio cuya raíz es especificado con el tag INPUT.
+
+# EXCLUDE               += @top_srcdir@/dune/basics/test
+
+# El tag EXAMPLE_PATH puede ser usado para especificar uno o más archivos o
+# directorios que contenga fragmentos de código ejemplo que son incluidas (vea
+# el comando \include).
+
+# EXAMPLE_PATH          += @top_srcdir@/src
+
+# El tag IMAGE_PATH puede ser usado para especificar uno o más archivos o
+# directorios que contenga imagen que son incluidas en la documentación (vea
+# el comando \image).
+
+# IMAGE_PATH            += @top_srcdir@/dune/basics/pics
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
