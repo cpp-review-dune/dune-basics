@@ -15,15 +15,13 @@ Here is text for one paragraph.
 
 We continue with more text in another paragraph.
 
-This is a level 1 header
-========================
+# This is a level 1 header
 
-This is a level 2 header
-------------------------
+## This is a level 2 header
 
 # This is a level 1 header
 
-### This is level 3 header #######
+### This is level 3 header
 
 > This is a block quote
 > spanning multiple lines
@@ -33,8 +31,8 @@ This is a level 2 header
   More text for this item.
 
 - Item 2
-  + nested list item.
-  + another nested item.
+  - nested list item.
+  - another nested item.
 - Item 3
 
 1. First item.
@@ -46,13 +44,13 @@ This a normal paragraph
 
 We continue with a normal paragraph again.
 
-*single asterisks*
+_single asterisks_
 
 _single underscores_
 
 **double asterisks**
 
-__double underscores__
+**double underscores**
 
 ~~double tilde~~
 
@@ -60,45 +58,44 @@ Use the `printf()` function.
 
 To assign the output of command `ls` to `var` use ``var=`ls```.
 
-To assign the text 'text' to `var` use ``var='text'``.
+To assign the text 'text' to `var` use `var='text'`.
 
 [The link text](http://example.net/)
 [The link text](http://example.net/ "Link title")
-[The link text](/relative/path/to/index.html "Link title") 
+[The link text](/relative/path/to/index.html "Link title")
 [The link text](somefile.html)
 
-[The link text](@ref MyClass) 
+[The link text](@ref MyClass)
 
 [link name]: http://www.example.com "Optional title"
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell 
-Content Cell  | Content Cell
+| First Header | Second Header |
+| ------------ | ------------- |
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
 
-| Right | Center | Left  |
-| ----: | :----: | :---- |
-| 10    | 10     | 10    |
-| 1000  | 1000   | 1000  |
+| Right | Center | Left |
+| ----: | :----: | :--- |
+|    10 |   10   | 10   |
+|  1000 |  1000  | 1000 |
 
-| Right | Center | Left  |
-| ----: | :----: | :---- |
-| 10    | 10     | 10    |
-| ^     | 1000   | 1000  |
+| Right | Center | Left |
+| ----: | :----: | :--- |
+|    10 |   10   | 10   |
+|     ^ |  1000  | 1000 |
 
 This is a paragraph introducing:
 
-~~~~~~~~~~~~~~~~~~~~~
+```
 a one-line code block
-~~~~~~~~~~~~~~~~~~~~~
+```
 
-~~~~~~~~~~~~~{.py}
+```{.py}
 # A class
 class Dummy:
     pass
-~~~~~~~~~~~~~
+```
 
-~~~~~~~~~~~~~~~{.c}
+```{.c}
 int func(int a,int b) { return a*b; }
-~~~~~~~~~~~~~~~
-
+```
