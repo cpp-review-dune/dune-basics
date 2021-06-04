@@ -1,8 +1,74 @@
-\input{dune-common-preamble}
+\input{dune-gmsh-preamble}
 
 \begin{document}
 
 \frame[plain,noframenumbering]{\titlepage}
+
+\begin{frame}[fragile]
+	\frametitle{Acerca de \texttt{gmsh}}
+	Es un software de código abierto para mallas tridimensionales de elementos
+	finitos y visualización de datos, cuenta su propio lenguaje de scripting y cuatro módulos:
+
+	\begin{description}
+		\item[\texttt{geometry}]
+
+			capa geométrica orientado a objetos para la creación de formas tridimensionales. Motores disponibles: Gmsh CAD y OpenCascade.
+
+		\item[\texttt{meshing}]
+
+			un módulo de mallado
+
+		\item[\texttt{solving}]
+
+			un módulo solucionador de ecuaciones
+
+		\item[\texttt{post-processing}]
+
+			un módulo de postprocesador.
+	\end{description}
+
+	\
+
+	Estamos interesados en usar la interfaz de línea de comandos
+	\verb|gmsh|, además de conocer dicho lenguaje de scripting así como
+	sus APIs.
+
+	\
+
+	Un \verb|archivo.geo| $\stackrel{\texttt{gmsh}}{\longrightarrow}$ \verb|archivo.msh|.
+	El primero contiene información de la geometría y parámetros de la malla.
+\end{frame}
+
+\begin{frame}[fragile]
+	Si estamos usando el repositorio \verb|arch4edu| o el \verb|aur|, instale con \verb|yay -Sy gmsh gmsh-docs|.\scriptsize
+	\begin{verbatim}
+		Repository      : arch4edu
+		Name            : gmsh
+		Version         : 4.8.4-1
+		Description     : An automatic 3D finite element mesh generator with pre and post-processing facilities.
+		Architecture    : x86_64
+		URL             : http://gmsh.info/
+		Licenses        : custom
+		Groups          : None
+		Provides        : None
+		Depends On      : fltk  med  opencascade  cairo  metis  alglib  ann  glu
+		Optional Deps   : gmsh-docs: docs for gmsh
+		python2: for gmsh.py
+		python: for gmsh.py
+		julia: for gmsh.jl
+		Conflicts With  : None
+		Replaces        : None
+		Download Size   : 7.80 MiB
+		Installed Size  : 38.88 MiB
+		Packager        : calil (on behalf of Jingbei Li) <i@jingbei.li>
+		Build Date      : Sun 02 May 2021 02:12:25 PM -05
+		Validated By    : MD5 Sum  SHA-256 Sum  Signature
+	\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Comandos elementales}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Objetivos de esta introdución}
@@ -51,58 +117,23 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Filosofía de Arch}
-
-	\begin{description}
-		\item[Simplicidad]
-			Es minimalista.
-			Se usa herramienta pequeñas que sigue la filosofía de UNIX, de modo que tengas una base muy pequeña que deje configurar la máquina de manera más cómoda para el usuario.
-		\item[Modernidad]
-			Mantener la paquetería lo más actualizada posible sin sacrificar la estabilidad. Cuenta con los compiladores más actuales de \lstinline{gcc}, \lstinline{lualatex}, \lstinline{go}, etc.
-		\item[Pragmatismo]
-			La gran cantidad de paquetes y scripts de compilación en los diversos repositorios de Arch Linux ofrecen software gratuito y de código abierto para quienes lo prefieren, así como paquetes de software propietario para quienes adoptan la funcionalidad por encima de la ideología.
-		\item[Centrado a las usuarias y usuarios]
-			La distribución está destinada a satisfacer las necesidades de quienes contribuyen a ella, en lugar de intentar atraer a tantos usuarios como sea posible.
-			Está dirigido al usuario competente de GNU/Linux, o cualquier persona con una actitud de hágalo usted mismo que esté dispuesto a leer la documentación y resolver sus propios problemas.
-			Se anima a todos los usuarios a participar y contribuir a la distribución.
-			Informar y ayudar a corregir errores es muy valioso y los parches que mejoran los paquetes o los proyectos principales son muy apreciados: los desarrolladores de Arch son voluntarios y los contribuyentes activos a menudo se convertirán en parte de ese equipo.
-		\item[Versatilidad]
-	\end{description}
-
-\end{frame}
-
-\begin{frame}
 
 	En esta ocasión hemos elegido Arch Linux como ambiente de trabajo porque tiene disponible una gran variedad de módulos de DUNE.
 	Es recomendable habilitar el repositorio \href{https://wiki.archlinux.org/title/Unofficial\_user\_repositories\#arch4edu}{\texttt{arch4edu}}\footnote{Administrado por Jingbei Li de la Universidad de Tsinghua.}.
-\end{frame}
-
-\begin{frame}
-	\frametitle{Usando el emulador de terminal}
-	% Una consola es un display del sistema
-	% En todo lo que sigue, usaremos el shell \lstinline{bash}.
-
-	% GNU General Public License v2.0
-	% GNU Lesser General Public License v2.1
-	% BSD 3-Clause "New" or "Revised" License
-
-	% El terminal te da acceso al shell, que nos da acceso al sistema operativo subyacente.
-	% El shell, sabe interactuar entre el usuario y el sistema operativo.
-
-	% CLI Command Line Interface
-\end{frame}
-
-\begin{frame}
-	% pwd
-	% El cursor parpadeante al final de la línea es donde se ingresan los comandos basados ​​en texto. Puede comenzar a experimentar con un comando simple, Imprimir directorio de trabajo (pwd), que muestra la carpeta actual en la que se encuentra en la pantalla. Escriba pwd y presione Entrar.
-
-	% Todos los comandos que ingresa funcionan de la misma manera: ingresa el comando, incluye cualquier parámetro para extender el uso del comando y presiona Enter para ejecutar la línea de comando que ingresó. Escribe en la Terminal: uname -a y presiona Enter. Esto muestra información del sistema con respecto a Mint
 \end{frame}
 
 \begin{frame}[fragile]
 	\begin{lstlisting}
     gitpod ~/dune-basics $ cd
   \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{figure}
+		\centering
+		\buildVoronoiBW[tikz,delaunay=show,styleDelaunay=dashed]
+		{(0.3,0.3);(1.5,1);(4,0);(4.5,2.5);(1.81,2.14);(2.5,0.5);(2.8,1.5);(0.1,2);(1.5,-0.3)}
+	\end{figure}
 \end{frame}
 
 %\lstinputpath{../../../sandbox}
@@ -117,27 +148,6 @@
 
 
 \end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Classes}
-
-	\lstinputlisting[
-		caption={Programa \texttt{dune-basics.cc}.},
-		label=dune-basics.cc,
-	]{../../../src/dune-basics.cc}
-
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Classes}
-
-	\lstinputlisting[
-		caption={Programa \texttt{dune-basics.cc}.},
-		label=dune-basics.cc,
-	]{../../../sandbox/dune-math-constants.cc}
-
-\end{frame}
-%https://archlinux.org/logos/archlinux-icon-crystal-256.svg
 
 \begin{frame}\transblindsvertical
 	\frametitle{Referencias}
@@ -166,3 +176,27 @@
 \end{frame}
 
 \end{document}
+
+% https://albertsk.files.wordpress.com/2012/12/gmsh_tutorial.pdf
+% https://indico.cern.ch/event/591096/contributions/2388462/attachments/1390640/2118262/main.pdf
+% http://jsdokken.com/converted_files/tutorial_gmsh.html
+% https://github.com/alejohg/tutoriales-gmsh
+% https://github.com/stvanegasgi/Tutorial-Gmsh-4.6.0
+% https://github.com/ahojukka5/gmshparser
+% https://victorsndvg.github.io/FEconv/formats/gmshmsh.xhtml
+% https://gmsh.info/doc/texinfo/gmsh.html
+% https://github.com/sunnyerteit/inventasFlow
+% https://ctan.dcc.uchile.cl/macros/luatex/latex/luamesh/doc/luamesh-doc.pdf
+% https://gmsh.info/doc/course/general_overview.pdf
+% https://indico.cern.ch/event/591096/#10-a-getdp-intro
+% http://freshkiss3d.gforge.inria.fr/index.html
+% https://framabook.org/docs/Code_Aster/beginning_with_code_aster-jp_aubry-20190129.pdf
+% https://www.youtube.com/watch?v=IuMa4bQI1Fg
+% https://www.youtube.com/playlist?list=PLbiOzt50Bx-l2QyX5ZBv9pgDtIei-CYs_
+% https://www.youtube.com/watch?v=oJB7ODwBoQ8
+% https://www.youtube.com/watch?v=LsL39CuPFx0
+% https://www.youtube.com/watch?v=Lhgw4dSEJbQ
+% https://www.youtube.com/watch?v=9w4Te298zsc
+% https://www.youtube.com/watch?v=R1S6cAwasuM
+% https://www.youtube.com/playlist?list=PLxT-itJ3HGuVHvjEqKVwLrcllRd5P4pXm
+% http://gmsh.info/dev/doc/texinfo/gmsh.txt
