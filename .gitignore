@@ -289,3 +289,5 @@ TSWLatexianTemp*
 build
 svg-inkscape
 __latexindent_*.tex
+latex
+html

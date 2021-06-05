@@ -183,12 +183,33 @@ INPUT                 += @top_srcdir@/dune/ \
 \end{frame}
 
 \begin{frame}[fragile]
+	Con Doxygen creamos un bloque de comentario en el cuerpo de una función empezando con \lstinline{/**} y ciertos parámetros señalados con el símbolo \lstinline{@} como se ve en el siguiente código
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{table}[ht!]
+		\caption{Comparación de la línea de comando del gestión de software (fuente: \url{wiki.archlinux.org})}
+		\centering\footnotesize
+		\begin{tabular}{cccp{50pt}}
+			\toprule
+			Acción           & Arch                   & Red Hat/Fedora         & Debian/Ubuntu
+			\tabularnewline
+			\midrule
+			Instala paquetes & \lstinline|pacman -S| & \lstinline|dnf install| & \lstinline|apt install|
+			\tabularnewline
+			\tabularnewline
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}[fragile]
 	\frametitle{Classes}
 
 	\lstinputlisting[
-		caption={Programa \texttt{hello-linux.cc}.},
+		caption={Programa \texttt{saludo.hh}.},
 		label=hello-linux.cc,
-	]{../../../sandbox/hello-linux.cc}
+	]{../../doxygen-tutorial/src/saludo.hh}
 \end{frame}
 
 \begin{frame}[fragile]
