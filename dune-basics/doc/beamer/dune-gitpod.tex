@@ -1,0 +1,57 @@
+\input{dune-gitpod-preamble}
+
+\begin{document}
+
+%\frame[plain,noframenumbering]{\titlepage}
+
+\framefor{CHEM8005}
+{
+	{Grignard Reagents-General reaction mechanisms}% definition of \framefor{audience}     {\begin{Frame}  Frame contents\end{frame}} hence the frame title being in parentheses and no \begin{frame} \end{frame} environment 
+	This frame only appears for module CHEM8005 when compiled...
+}
+
+\begin{frame}{Grignard Reagents-Aldehydes and Ketones}
+	This frame appears for all modules as does this line.\\
+	\justfor{CHEM6005}{But this line only appears for module CHEM6005.}
+	\justfor{CHEM7002}{This line only appears for module CHEM7002.}
+	\justfor{CHEM8005}{This line only appears for CHEM8005.}
+
+\end{frame}
+
+\begin{frame}{Grignard Reagents-Esters}%[CHEM8005]
+	This frame appears for all modules.
+	\showcontentfor{CHEM6005}{CHEM6005. Only the barest details are necessary.}\showcontentfor{CHEM7002}{CHEM7002. A little bit more information is given.}\showcontentfor{CHEM8005}{CHEM8005. A lot more information and maybe a few diagrams are given for this module.}\end{frame}
+
+\justfor{CHEM7002}{
+	\begin{frame}
+		Only content for CHEM7002
+	\end{frame}
+}
+
+% \begin{frame}\transblindsvertical
+% 	\frametitle{Referencias}
+% 	%------------------------------------------------------------ 1
+% 	\only<1>{
+% 		\begin{itemize}
+% 			\item Libros
+% 			      \nocite{*}
+% 			      \printbibliography[heading=none,keyword=book]
+% 		\end{itemize}
+% 	}
+% 	%------------------------------------------------------------ 2
+% 	\only<2>{
+% 		\begin{itemize}
+% 			\item Artículos
+% 			      \printbibliography[heading=none,keyword=paper]
+% 		\end{itemize}
+% 	}
+% 	%------------------------------------------------------------ 3
+% 	\only<3>{
+% 		\begin{itemize}
+% 			\item Sitios web
+% 			      \printbibliography[heading=none,keyword=online]
+% 		\end{itemize}
+% 	}
+% \end{frame}
+
+\end{document}
