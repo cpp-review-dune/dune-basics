@@ -1,30 +1,32 @@
+% arara: lualatex: { shell: yes }
+% arara: lualatex: { shell: yes }
 \input{dune-gitpod-preamble}
 
 \begin{document}
 
-%\frame[plain,noframenumbering]{\titlepage}
+\frame[plain,noframenumbering]{\titlepage}
 
-\framefor{CHEM8005}
+\framefor{german}
 {
 	{Grignard Reagents-General reaction mechanisms}% definition of \framefor{audience}     {\begin{Frame}  Frame contents\end{frame}} hence the frame title being in parentheses and no \begin{frame} \end{frame} environment 
-	This frame only appears for module CHEM8005 when compiled...
+	This frame only appears for module german when compiled...
 }
 
 \begin{frame}{Grignard Reagents-Aldehydes and Ketones}
 	This frame appears for all modules as does this line.\\
-	\justfor{CHEM6005}{But this line only appears for module CHEM6005.}
-	\justfor{CHEM7002}{This line only appears for module CHEM7002.}
-	\justfor{CHEM8005}{This line only appears for CHEM8005.}
+	\justfor{spanish}{But this line only appears for module spanish.}
+	\justfor{english}{This line only appears for module english.}
+	\justfor{german}{This line only appears for german.}
 
 \end{frame}
 
-\begin{frame}{Grignard Reagents-Esters}%[CHEM8005]
+\begin{frame}{Grignard Reagents-Esters}%[german]
 	This frame appears for all modules.
-	\showcontentfor{CHEM6005}{CHEM6005. Only the barest details are necessary.}\showcontentfor{CHEM7002}{CHEM7002. A little bit more information is given.}\showcontentfor{CHEM8005}{CHEM8005. A lot more information and maybe a few diagrams are given for this module.}\end{frame}
+	\showcontentfor{spanish}{spanish. Only the barest details are necessary.}\showcontentfor{english}{english. A little bit more information is given.}\showcontentfor{german}{german. A lot more information and maybe a few diagrams are given for this module.}\end{frame}
 
-\justfor{CHEM7002}{
+\justfor{english}{
 	\begin{frame}
-		Only content for CHEM7002
+		Only content for english
 	\end{frame}
 }
 
