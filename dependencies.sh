@@ -3,7 +3,7 @@
 set -u -x
 
 echo 'Installing dependencies'
-sudo -u aur yay -Syu texlive-latexextra texlive-pictures texlive-science texlive-fontsextra texlive-bibtexextra biber inkscape doxygen python-sphinx ttf-firacode --needed --noconfirm
+sudo -u aur yay -Syu texlive-latexextra texlive-pictures texlive-science texlive-fontsextra texlive-bibtexextra biber inkscape doxygen python-sphinx ttf-fira-code --needed --noconfirm
 
 # http://fpliu-blog.chinacloudsites.cn/it/software/man
 echo 'Installing manpages'
@@ -15,3 +15,7 @@ echo 'Installing gmsh API'
 # python -m venv $HOME/gmsh-env
 # source $HOME/gmsh-env/bin/activate
 # pip install gmsh
+
+echo 'Installing manpages'
+
+sudo -u aur yay -Syu boost --needed --noconfirm
