@@ -291,3 +291,8 @@ svg-inkscape
 __latexindent_*.tex
 latex
 html
+
+.bash_history
+.config
+.lesshst
+.texlive
