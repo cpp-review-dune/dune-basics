@@ -1,0 +1,202 @@
+\input{dune-command-line-preamble}
+
+\begin{document}
+
+\frame[plain,noframenumbering]{\titlepage}
+
+\begin{frame}
+	\frametitle{Empezando con GNU/Linux}
+    Nos otorga un entorno de programación con un programa base llamado shell que nos permite comunicarnos entre el kernel y las aplicaciones de usuario, por lo que controlamos el sistema operativo.
+    Tiene un lenguaje de scripting que nos permite automatizar tareas que sigue el estándar POSIX.
+
+	\begin{itemize}
+		\item Abrir terminal\quad\keys{\ctrl+\Alt+t}.
+        \item Obtener los comandos digitados recientemente\quad\keys{\arrowkeyup}/\keys{\arrowkeydown}.
+        \item Limpiar la consola \quad\keys{\ctrl+l}.
+        \item Moverse entre palabras \quad\keys{\Alt+f}/\keys{\Alt+b}.
+        \item Moverse al inicio/final del comando \quad\keys{Home}/\keys{End}.
+        \item Buscar comandos utilizados anteriormente\quad\keys{\ctrl+r}/\keys{\ctrl+s}.
+        \item Interrumpir la ejecución de un programa\quad\keys{\ctrl+c}.
+        \item Enviar a segundo plano un proceso\quad\keys{\ctrl+z}.
+        \item Autocompletar el nombre de un archivo\quad\keys{\tab}.
+        \item Despliega el número de posibilidades para el comando\quad\keys{\tab+\tab}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Comandos básicos}
+
+    Existen algunas convenciones acerca del directorio de trabajo, tiene la forma \lstinline|/foo/bar|.
+    \begin{verbatim}
+    [user@host somedir]$ pwd
+    /home/user/somedir
+    \end{verbatim}
+    Cada directorio tiene por lo menos dos directorio, el directorio padre \lstinline|..| y el directorio actual \lstinline|.| como se ve a continuación.
+    \begin{verbatim}
+    [user@host somedir]$ ls -a
+    . ..
+    \end{verbatim}
+
+	\begin{table}[ht!]
+		\caption{Comandos básicos}
+		\centering\footnotesize
+		\begin{tabular}{cc}
+			\toprule
+			Comando             & Utilidad
+			\tabularnewline
+			\midrule
+			\lstinline|pwd|  &  Muestra la ruta absoluta del directorio actual.
+			\tabularnewline
+            \lstinline|cd|  &  Navega al home del usuario.
+			\tabularnewline
+            \lstinline|ls|  &  Lista los archivos del directorio en el que se encuentra.
+			\tabularnewline
+            \lstinline|cp origen destino|  &  Copia un archivo origen al destino.
+			\tabularnewline
+            \lstinline|mkdir nombre|  &  Crea una carpeta vacía llamada nombre.
+			\tabularnewline
+            \lstinline|find /foo/bar -name '*.cc'|  &  Busca archivos con extensión \lstinline|.cc| en la ruta \lstinline|/foo/bar|.
+			\tabularnewline
+            \lstinline|chmod +x ejemplo|  &  Dar permisos de ejecución al binario ejemplo.
+            \tabularnewline
+            \lstinline|rm archivo|  &  Elimina el inodo del archivo.
+			\tabularnewline
+            \lstinline|cat archivo|  &  Imprime el contenido de un archivo a la salida estándar.
+			\tabularnewline
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Filosofía de Arch}
+
+	\begin{description}
+		\item[Simplicidad]
+			Es minimalista.
+			Se usa herramienta pequeñas que sigue la filosofía de UNIX, de modo que tengas una base muy pequeña que deje configurar la máquina de manera más cómoda para el usuario.
+		\item[Modernidad]
+			Mantener la paquetería lo más actualizada posible sin sacrificar la estabilidad. Cuenta con los compiladores más actuales de \lstinline{gcc}, \lstinline{lualatex}, \lstinline{go}, etc.
+		\item[Pragmatismo]
+			La gran cantidad de paquetes y scripts de compilación en los diversos repositorios de Arch Linux ofrecen software gratuito y de código abierto para quienes lo prefieren, así como paquetes de software propietario para quienes adoptan la funcionalidad por encima de la ideología.
+		\item[Centrado a las usuarias y usuarios]
+			La distribución está destinada a satisfacer las necesidades de quienes contribuyen a ella, en lugar de intentar atraer a tantos usuarios como sea posible.
+			Está dirigido al usuario competente de GNU/Linux, o cualquier persona con una actitud de hágalo usted mismo que esté dispuesto a leer la documentación y resolver sus propios problemas.
+			Se anima a todos los usuarios a participar y contribuir a la distribución.
+			Informar y ayudar a corregir errores es muy valioso y los parches que mejoran los paquetes o los proyectos principales son muy apreciados: los desarrolladores de Arch son voluntarios y los contribuyentes activos a menudo se convertirán en parte de ese equipo.
+		\item[Versatilidad]
+	\end{description}
+
+\end{frame}
+
+\begin{frame}
+
+	En esta ocasión hemos elegido Arch Linux como ambiente de trabajo porque tiene disponible una gran variedad de módulos de DUNE.
+	Es recomendable habilitar el repositorio \href{https://wiki.archlinux.org/title/Unofficial\_user\_repositories\#arch4edu}{\texttt{arch4edu}}\footnote{Administrado por Jingbei Li de la Universidad de Tsinghua.}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Usando el emulador de terminal}
+	% Una consola es un display del sistema
+	% En todo lo que sigue, usaremos el shell \lstinline{bash}.
+
+	% GNU General Public License v2.0
+	% GNU Lesser General Public License v2.1
+	% BSD 3-Clause "New" or "Revised" License
+
+	% El terminal te da acceso al shell, que nos da acceso al sistema operativo subyacente.
+	% El shell, sabe interactuar entre el usuario y el sistema operativo.
+
+	% CLI Command Line Interface
+\end{frame}
+
+\begin{frame}
+	% pwd
+	% El cursor parpadeante al final de la línea es donde se ingresan los comandos basados ​​en texto. Puede comenzar a experimentar con un comando simple, Imprimir directorio de trabajo (pwd), que muestra la carpeta actual en la que se encuentra en la pantalla. Escriba pwd y presione Entrar.
+
+	% Todos los comandos que ingresa funcionan de la misma manera: ingresa el comando, incluye cualquier parámetro para extender el uso del comando y presiona Enter para ejecutar la línea de comando que ingresó. Escribe en la Terminal: uname -a y presiona Enter. Esto muestra información del sistema con respecto a Mint
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{lstlisting}
+    gitpod ~/dune-basics $ cd
+  \end{lstlisting}
+\end{frame}
+
+%\lstinputpath{../../../sandbox}
+
+\begin{frame}[fragile]
+	\frametitle{Classes}
+
+	\lstinputlisting[
+		caption={Programa \texttt{hello-linux.cc}.},
+		label=hello-linux.cc,
+	]{../../../sandbox/hello-linux.cc}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes}
+
+	\lstinputlisting[
+		caption={Programa \texttt{dune-basics.cc}.},
+		label=dune-basics.cc,
+	]{../../../src/dune-basics.cc}
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes}
+
+	\lstinputlisting[
+		caption={Programa \texttt{dune-basics.cc}.},
+		label=dune-basics.cc,
+	]{../../../sandbox/dune-math-constants.cc}
+
+\end{frame}
+%https://archlinux.org/logos/archlinux-icon-crystal-256.svg
+
+\begin{frame}
+	\frametitle{El comando \lstinline{duneproject}}
+	% https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject
+	Es un asistente en el lenguaje \lstinline{bash} que se encuentra en \lstinline{/usr/bin/duneproject}\ldots
+
+\end{frame}
+
+\begin{frame}\transblindsvertical
+	\frametitle{Referencias}
+	%------------------------------------------------------------ 1
+	\only<1>{
+		\begin{itemize}
+			\item Libros
+			      \nocite{*}
+			      \printbibliography[heading=none,keyword=book]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 2
+	\only<2>{
+		\begin{itemize}
+			\item Artículos
+			      \printbibliography[heading=none,keyword=paper]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 3
+	\only<3>{
+		\begin{itemize}
+			\item Sitios web
+			      \printbibliography[heading=none,keyword=online]
+		\end{itemize}
+	}
+\end{frame}
+
+\end{document}
+%https://github.com/easybuilders/easybuild/wiki/EasyBuild-Tech-Talks-I%3A-Open-MPI
+% https://www.youtube.com/playlist?list=PLagFkXs2BczZO4B_I6YhuS4xOxlSPgZuT
+% https://www.youtube.com/playlist?list=PLagFkXs2BczZGsvnN7UAqd5LWfgOrat0v
+% https://www.youtube.com/playlist?list=PLZRRlbOTxTmAMASXs7mAFnKkFZ3ohefTF
+% https://www.youtube.com/playlist?list=PLZRRlbOTxTmBERH5Ov1kWhPlmOQAP04zi
+% https://www.youtube.com/playlist?list=PLZRRlbOTxTmCaBYeLHQyqMFyI6caKsVDd
+% https://www.youtube.com/playlist?list=PLZRRlbOTxTmB_gV8rLQ6N9KDX5po5eTay
+% https://www.youtube.com/playlist?list=PLZRRlbOTxTmCyLkmjWg0e8cNk6rONT-mk
