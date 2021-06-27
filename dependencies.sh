@@ -4,8 +4,8 @@ set -u -x
 
 echo 'Installing dependencies'
 sudo -u aur yay -Syu texlive-latexextra texlive-pictures texlive-science texlive-fontsextra texlive-bibtexextra biber inkscape doxygen python-sphinx ttf-fira-code --needed --noconfirm
-sudo -u aur echo 'export PATH="/usr/bin/vendor_perl/biber:$PATH"' >> /home/gitpod/.bashrc
-sudo -u aur echo 'alias man='man -Les'' >> /home/gitpod/.bashrc
+sudo -u aur echo 'export PATH="/usr/bin/vendor_perl:$PATH"' >> /home/gitpod/.bashrc
+sudo -u aur echo 'alias man="man -Les"' >> /home/gitpod/.bashrc
 # http://fpliu-blog.chinacloudsites.cn/it/software/man
 echo 'Installing manpages'
 sudo -u aur yay -Syu tldr man-pages man-pages-es --needed --noconfirm
