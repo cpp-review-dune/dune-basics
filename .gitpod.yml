@@ -1,0 +1,28 @@
+image:
+  file: .gp/Dockerfile
+
+tasks:
+  - name: "ssh public key setup"
+    command: |
+      docker run -it --rm -v $(pwd):/home/gitpod/work ghcr.io/cpp-review-dune/introductory-review/dunebasics:latest
+
+ports:
+  # [ NOTE ] => for chisel
+  - port: 8080
+    onOpen: ignore
+  # [ NOTE ] => for dropbear
+  - port: 2222
+    onOpen: ignore
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
+    - golang.Go
+    - bungcip.better-toml
+    - TabNine.tabnine-vscode
+    - EditorConfig.EditorConfig
+    - kevinkyang.auto-comment-blocks
+    - ms-azuretools.vscode-docker
+    - wmaurer.change-case
+    - skellock.just
+    - wholroyd.hcl
+    - gruntfuggly.todo-tree
