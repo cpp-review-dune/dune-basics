@@ -2,6 +2,8 @@
 
 \section intro Introduction
 
+Documentación automática 
+
 Bienvenido a las páginas de documentación. Welcome to the %Dune documentation pages.
 Esta documentación ha sido generado usando Doxygen, una sistema de documentación de código abierto para documentar código C/C++.
 This documentation has been generated using Doxygen, a free source code documentation system for documenting C/C++ code.
