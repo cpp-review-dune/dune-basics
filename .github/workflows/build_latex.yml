@@ -36,12 +36,12 @@ jobs:
           options: -v ${{github.workspace}}:/work
           shell: bash
           run: |
+            sudo chown -R 33333:33333 /work
             cd /work
             . ./dependencies.sh
             export PATH="/usr/bin/vendor_perl:$PATH"
             cd dune-basics
             ls -l
-            chown -R gitpod:gitpod dune-basics
             mkdir build
             cd build
             cmake ..
