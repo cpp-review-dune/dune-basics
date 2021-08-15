@@ -20,3 +20,5 @@ echo 'Installing gmsh API'
 echo 'Installing manpages'
 
 sudo -u aur yay -Syu boost --needed --noconfirm
+echo 'Actualizando perfiles'
+source ~/.bashrc
