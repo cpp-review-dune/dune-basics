@@ -38,14 +38,14 @@ jobs:
           run: |
             cd /work
             . ./dependencies.sh
-            biber --version
+            whoami
             cd dune-basics
             ls
-            # mkdir build
-            # cd build
-            # cmake ..
-            # cd doc/beamer
-            # make doc_beamer_structure_tex
+            mkdir build
+            cd build
+            cmake ..
+            cd doc/beamer
+            make doc_beamer_structure_tex
 
       - name: Check pdf files
         run: |
