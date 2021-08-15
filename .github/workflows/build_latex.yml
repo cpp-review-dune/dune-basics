@@ -2,11 +2,11 @@ name: PDFs
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     # paths:
     #   - dune-basics/doc/beamer/**
   pull_request:
-    branches: [main]
+    branches: [master]
   schedule:
     - cron: "0 14 * * 5"
   # workflow_dispatch:
