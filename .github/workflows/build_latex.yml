@@ -36,8 +36,9 @@ jobs:
           options: -v ${{github.workspace}}:/work
           shell: bash
           run: |
-            cd /work/dune-basics/dune-basics
-            ls
+            ls -R /
+            # cd /work/dune-basics/dune-basics
+            # ls
             # . ./dependencies.sh
             # biber --version
             # mkdir build
