@@ -49,7 +49,9 @@ jobs:
 
       - name: Check pdf files
         run: |
-          find dune-basics/dune-basics/build/doc/beamer/ -type f -name "*.pdf" -exec file -- {} + | grep -q ' PDF '
+          pwd
+          ls
+          find dune-basics/build/doc/beamer/ -type f -name "*.pdf" -exec file -- {} + | grep ' PDF '
 
       - name: "Tar files"
         run: |
