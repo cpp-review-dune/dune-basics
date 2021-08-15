@@ -53,7 +53,7 @@ jobs:
 
       - name: "Tar files"
         run: |
-          sudo chown runner:docker -R dune-basics/build/doc/beamer/
+          sudo chown runner:docker -R .
           ls -l
           mkdir -p docs/public
           mv dune-basics/build/doc/beamer/*.pdf docs/public
