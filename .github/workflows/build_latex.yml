@@ -3,8 +3,8 @@ name: PDFs
 on:
   push:
     branches: [main]
-    paths:
-      - dune-basics/doc/beamer/**
+    # paths:
+    #   - dune-basics/doc/beamer/**
   pull_request:
     branches: [main]
   schedule:
