@@ -16,6 +16,7 @@ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules"
 
 #include the dune macros
 include(DuneMacros)
+find_package(fmt)
 
 # start a dune project with information from dune.module
 dune_project()
