@@ -36,7 +36,7 @@ jobs:
           options: -v ${{github.workspace}}:/work
           shell: bash
           run: |
-            pwd
+            cd /work
             ls
             # biber --version
             # mkdir build
