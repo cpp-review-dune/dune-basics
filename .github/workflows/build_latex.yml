@@ -3,8 +3,8 @@ name: PDFs
 on:
   push:
     branches: [master]
-    # paths:
-    #   - dune-basics/doc/beamer/**
+    paths:
+      - dune-basics/doc/beamer/**
   pull_request:
     branches: [master]
   schedule:
@@ -54,12 +54,11 @@ jobs:
       - name: "Tar files"
         run: |
           sudo chown runner:docker -R .
-          ls -l
           mkdir -p docs/public
           mv dune-basics/build/doc/beamer/*.pdf docs/public
 
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: docs/public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/public
