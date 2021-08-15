@@ -49,16 +49,17 @@ jobs:
 
       - name: Check pdf files
         run: |
+          pwd
+          ls -R
           find dune-basics/build/doc/beamer/ -type f -name "*.pdf" -exec file -- {} + | grep -q ' PDF '
 
       - name: "Tar files"
         run: |
-          sudo chown runner:docker -R build
+          sudo chown runner:docker -R dune-basics/build/doc/beamer/
           mkdir -p docs/public
           pwd
           ls -l
-          # mv build/doc/*.pdf docs/public
-          # mv docs/public/doc_dune-webinar_tex_source.pdf docs/public/slides.pdf
+          mv dune-basics/build/doc/beamer/*.pdf docs/public
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
