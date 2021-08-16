@@ -4,17 +4,10 @@
 	xcolor=table,
 	handout,
 	aspectratio=1610,
-	% ignorenonframetext
+	ignorenonframetext
 ]{beamer}
 
 \usepackage[spanish]{babel}
-
-\usepackage[audience=
-%english
-spanish
-%german
-]{beameraudience}
-
 \usepackage[
 	cursointroductorio,
 	fullpagenumbering
@@ -23,13 +16,19 @@ spanish
 \usepackage{longtable}
 
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-% \addbibresource{dune-doxygen-references.bib}
+\addbibresource{dune-docker-references.bib}
 
 \title{
-	Introducción a~\gitpod{}
+	Introducción a~\docker{}
 }
 \subtitle{
-	Una plataforma de desarrollo basado en contenedores
+	Parte I:
+	\lstinline{bash},
+	\lstinline{g++},
+	\lstinline{cmake},
+	\lstinline{gnuplot},
+	\lstinline{gmsh},
+	\lstinline{paraview}
 }
 
 \author{}
@@ -83,8 +82,8 @@ spanish
 {\endlist}
 {\item}
 
-\newcommand{\gitpod}{%
+\newcommand{\docker}{%
 	\begingroup\normalfont
-	\includegraphics[height=2\fontcharht\font`B]{gitpod}%
+	\includegraphics[height=2\fontcharht\font`B]{docker}%
 	\endgroup
 }

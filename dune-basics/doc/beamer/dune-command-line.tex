@@ -68,7 +68,7 @@
 		      Los proyectos de software, como \href{https://dune-project.org}{Dune Project}, toman la forma de código fuente.
 		\item
 		Es un conjunto de instrucciones de cómputo legibles para el humano.
-		\item Linux está siendo escrito principalmente en C, Rust y C++.
+		\item Linux está siendo escrito principalmente en C.
 	\end{itemize}
 \end{frame}
 
@@ -118,35 +118,7 @@
 
 \end{frame}
 
-\begin{frame}
-	\frametitle{Filosofía de Arch}
-
-	\begin{description}
-		\item[Simplicidad]
-			Es minimalista.
-			Se usa herramienta pequeñas que sigue la filosofía de UNIX, de modo que tengas una base muy pequeña que deje configurar la máquina de manera más cómoda para el usuario.
-		\item[Modernidad]
-			Mantener la paquetería lo más actualizada posible sin sacrificar la estabilidad. Cuenta con los compiladores más actuales de \lstinline{gcc}, \lstinline{lualatex}, \lstinline{go}, etc.
-		\item[Pragmatismo]
-			La gran cantidad de paquetes y scripts de compilación en los diversos repositorios de Arch Linux ofrecen software gratuito y de código abierto para quienes lo prefieren, así como paquetes de software propietario para quienes adoptan la funcionalidad por encima de la ideología.
-		\item[Centrado a las usuarias y usuarios]
-			La distribución está destinada a satisfacer las necesidades de quienes contribuyen a ella, en lugar de intentar atraer a tantos usuarios como sea posible.
-			Está dirigido al usuario competente de GNU/Linux, o cualquier persona con una actitud de hágalo usted mismo que esté dispuesto a leer la documentación y resolver sus propios problemas.
-			Se anima a todos los usuarios a participar y contribuir a la distribución.
-			Informar y ayudar a corregir errores es muy valioso y los parches que mejoran los paquetes o los proyectos principales son muy apreciados: los desarrolladores de Arch son voluntarios y los contribuyentes activos a menudo se convertirán en parte de ese equipo.
-		\item[Versatilidad]
-	\end{description}
-
-\end{frame}
-
-\begin{frame}
-	Estamos probando el funcionamiento de Gitpod $\sin{t}$.
-	En esta ocasión hemos elegido Arch Linux como ambiente de trabajo porque tiene disponible una gran variedad de módulos de DUNE.
-	Es recomendable habilitar el repositorio \href{https://wiki.archlinux.org/title/Unofficial\_user\_repositories\#arch4edu}{\texttt{arch4edu}}\footnote{Administrado por Jingbei Li de la Universidad de Tsinghua.}.
-\end{frame}
-
-\begin{frame}
-	\frametitle{Usando el emulador de terminal}
+%	\frametitle{Usando el emulador de terminal}
 	% Una consola es un display del sistema
 	% En todo lo que sigue, usaremos el shell \lstinline{bash}.
 
@@ -158,14 +130,11 @@
 	% El shell, sabe interactuar entre el usuario y el sistema operativo.
 
 	% CLI Command Line Interface
-\end{frame}
 
-\begin{frame}
 	% pwd
 	% El cursor parpadeante al final de la línea es donde se ingresan los comandos basados ​​en texto. Puede comenzar a experimentar con un comando simple, Imprimir directorio de trabajo (pwd), que muestra la carpeta actual en la que se encuentra en la pantalla. Escriba pwd y presione Entrar.
 
 	% Todos los comandos que ingresa funcionan de la misma manera: ingresa el comando, incluye cualquier parámetro para extender el uso del comando y presiona Enter para ejecutar la línea de comando que ingresó. Escribe en la Terminal: uname -a y presiona Enter. Esto muestra información del sistema con respecto a Mint
-\end{frame}
 
 \begin{frame}[fragile]
 	\begin{lstlisting}

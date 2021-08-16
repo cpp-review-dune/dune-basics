@@ -7,6 +7,8 @@ echo 'alias man="man -Les"' >>~/.bashrc
 # http://fpliu-blog.chinacloudsites.cn/it/software/man
 echo 'Installing manpages'
 yay -S tldr man-pages man-pages-es --needed --noconfirm
+echo 'Installing exam-terminal'
+yay -S exam-terminal --needed --noconfirm
 # python -m venv $HOME/gmsh-env
 # source $HOME/gmsh-env/bin/activate
 echo 'Actualizando perfiles'

@@ -45,7 +45,7 @@ jobs:
             cd build
             cmake ..
             cd doc/beamer
-            make doc_beamer_structure_tex
+            make
 
       - name: Check pdf files
         run: |
