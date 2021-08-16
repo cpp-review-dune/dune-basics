@@ -19,7 +19,7 @@
 \renewmenumacro{\keys}[+]{shadowedroundedkeys}
 
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-\addbibresource{dune-common-references.bib}
+\addbibresource{dune-command-line-references.bib}
 
 \title{
 	Introducción a línea de comandos de Linux
@@ -84,3 +84,15 @@
 		\setlength{\parsep}{\bibparsep}}}
 {\endlist}
 {\item}
+
+\newcommand{\linux}{%
+	\begingroup\normalfont
+	\includegraphics[height=2\fontcharht\font`\B]{linux}%
+	\endgroup
+}
+
+\newcommand{\gnu}{%
+	\begingroup\normalfont
+	\includegraphics[height=2\fontcharht\font`\B]{gnu}%
+	\endgroup
+}
