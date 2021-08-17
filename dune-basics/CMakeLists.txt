@@ -28,6 +28,7 @@ add_subdirectory(dune-book)
 add_subdirectory(sandbox)
 add_subdirectory(dune)
 add_subdirectory(doc)
+add_subdirectory(pydemo)
 add_subdirectory(cmake/modules)
 
 # finalize the dune project, e.g. generating config.h etc.
