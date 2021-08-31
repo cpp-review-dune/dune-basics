@@ -16,10 +16,10 @@
 \usepackage{longtable}
 
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-\addbibresource{dune-common-references.bib}
+\addbibresource{dune-cmake-references.bib}
 
 \title{
-	Introducción al módulo \texttt{dune-common}
+	Introducción a la herramienta cmake~\cmake{}
 }
 \subtitle{
 	Parte I:
@@ -81,3 +81,9 @@
 		\setlength{\parsep}{\bibparsep}}}
 {\endlist}
 {\item}
+
+\newcommand{\cmake}{%
+	\begingroup\normalfont
+	\includegraphics[height=2\fontcharht\font`B]{cmake}%
+	\endgroup
+}
