@@ -6,10 +6,16 @@
 
 
 \begin{frame}[fragile]
+	El fichero \lstinline{CMakeLists.txt} nos indica el mínimo de versión de cmake que soporta esta configuración.
+	En este script definiremos todo acerca de la construcción, desde el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
+	Este script empieza con
+	\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required}}
+	\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project}}
+	\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set}}
+	\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable}}
+\end{frame}
 
-% \begin{minted}{c++}
-% #include <iostream>
-% \end{minted}
+\begin{frame}[fragile]
 
 \inputminted{cmake}{CMakeList.txt.sample}
 
