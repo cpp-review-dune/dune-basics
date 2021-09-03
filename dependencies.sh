@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 echo 'Installing dependencies'
-yay -Syyu texlive-latexextra texlive-pictures texlive-science texlive-fontsextra texlive-bibtexextra biber inkscape doxygen python-sphinx ttf-fira-code fmt --needed --noconfirm
+yay -Syyu texlive-latexextra texlive-pictures texlive-science texlive-fontsextra texlive-bibtexextra biber inkscape doxygen python-sphinx ttf-fira-code minted fmt --needed --noconfirm
 echo 'export PATH="/usr/bin/vendor_perl:$PATH"' >>~/.bashrc
 echo 'alias man="man -Les"' >>~/.bashrc
 # http://fpliu-blog.chinacloudsites.cn/it/software/man
