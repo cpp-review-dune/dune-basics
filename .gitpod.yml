@@ -1,28 +1,28 @@
-image:
-  file: .gp/Dockerfile
+image: ghcr.io/cpp-review-dune/introductory-review/dunebasics
 
 tasks:
-  - name: "ssh public key setup"
+  - name: Say welcome
     command: |
-      docker run -it --rm -v $(pwd):/home/gitpod/work ghcr.io/cpp-review-dune/introductory-review/dunebasics:latest
+      echo "Bienvenido(a) $(whoami)!"
+      echo 'unset JAVA_TOOL_OPTIONS' >>~/.bashrc
+      echo 'alias update="yay -Syyu --noconfirm"' >>~/.bashrc
+      source ~/.bashrc
 
-ports:
-  # [ NOTE ] => for chisel
-  - port: 8080
-    onOpen: ignore
-  # [ NOTE ] => for dropbear
-  - port: 2222
-    onOpen: ignore
 vscode:
   extensions:
-    - ms-azuretools.vscode-docker
-    - golang.Go
-    - bungcip.better-toml
+    - ms-python.python
+    - anwar.papyrus-pdf
+    - twxs.cmake
+    - ms-vscode.cmake-tools
+    - cschlosser.doxdocgen
+    - xaver.clang-format
     - TabNine.tabnine-vscode
-    - EditorConfig.EditorConfig
-    - kevinkyang.auto-comment-blocks
-    - ms-azuretools.vscode-docker
-    - wmaurer.change-case
-    - skellock.just
-    - wholroyd.hcl
-    - gruntfuggly.todo-tree
+    # - ms-vscode.cpptools@0.26.2:Pq/tmf2WN3SanVzB4xZc1g==
+    # - bungcip.better-toml
+    # - EditorConfig.EditorConfig
+    # - kevinkyang.auto-comment-blocks
+    # - ms-azuretools.vscode-docker
+    # - wmaurer.change-case
+    # - skellock.just
+    # - wholroyd.hcl
+    # - gruntfuggly.todo-tree
