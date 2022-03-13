@@ -24,7 +24,6 @@ dune_project()
 dune_enable_all_packages()
 
 add_subdirectory(src)
-add_subdirectory(dune-book)
 add_subdirectory(sandbox)
 add_subdirectory(dune)
 add_subdirectory(doc)

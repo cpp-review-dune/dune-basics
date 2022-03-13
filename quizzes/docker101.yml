@@ -32,8 +32,7 @@ questions:
       - "docker inspect mycontainer": true
       - "docker inspect mycontainer"
 
-  - question:
-      "¿Cómo listar los volúmenes existentes?"
+  - question: "¿Cómo listar los volúmenes existentes?"
     selection:
       - "ls volumes"
       - "volumes"

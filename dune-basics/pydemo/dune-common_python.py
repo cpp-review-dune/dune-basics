@@ -3,8 +3,10 @@
 
 from dune.common import FieldVector
 
+
 def myvector(array):
-  return f"{FieldVector(array)}"
+    return f"{FieldVector(array)}"
+
 
 if __name__ == "__main__":
-  print(myvector([0, 0]))
+    print(myvector([0, 0]))
