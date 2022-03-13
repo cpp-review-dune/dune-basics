@@ -39,18 +39,17 @@ jobs:
             sudo chown -R 33333:33333 /work
             cd /work/
             cmake -S dune-basics -B build
-            cmake --build build --target doc_beamer_dune-cmake_tex doc_beamer_dune-doxygen_tex doc_beamer_dune-git_tex doc_beamer_dune-gitpod_tex doc_beamer_structure_tex
+            cmake --build build
 
       - name: Check pdf files
         run: |
-          ls -l
-          find dune-basics/build/doc/beamer/ -type f -name "*.pdf" -exec file -- {} + | grep -q ' PDF '
+          find build/doc/beamer/ -type f -name "*.pdf" -exec file -- {} + | grep -q ' PDF '
 
       - name: "Tar files"
         run: |
           sudo chown runner:docker -R .
           mkdir -p docs/public
-          mv dune-basics/build/doc/beamer/*.pdf docs/public
+          mv build/doc/beamer/*.pdf docs/public
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
