@@ -3,8 +3,8 @@ name: PDFs
 on:
   push:
     branches: [master]
-    paths:
-      - dune-basics/doc/beamer/**
+    # paths:
+    #   - dune-basics/doc/beamer/**
   pull_request:
     branches: [master]
   schedule:
@@ -32,23 +32,18 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: ghcr.io
-          image: ghcr.io/cpp-review-dune/introductory-review/dunepdelab:latest
+          image: ghcr.io/cpp-review-dune/introductory-review/dunebasics:latest
           options: -v ${{github.workspace}}:/work
           shell: bash
           run: |
             sudo chown -R 33333:33333 /work
-            cd /work
-            . ./dependencies.sh
-            export PATH="/usr/bin/vendor_perl:$PATH"
-            cd dune-basics
-            mkdir build
-            cd build
-            cmake ..
-            cd doc/beamer
-            make
+            cd /work/
+            cmake -S dune-basics -B build
+            cmake --build build --target doc_beamer_dune-cmake_tex doc_beamer_dune-doxygen_tex doc_beamer_dune-git_tex doc_beamer_dune-gitpod_tex doc_beamer_structure_tex
 
       - name: Check pdf files
         run: |
+          ls -l
           find dune-basics/build/doc/beamer/ -type f -name "*.pdf" -exec file -- {} + | grep -q ' PDF '
 
       - name: "Tar files"
