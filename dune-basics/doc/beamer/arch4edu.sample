@@ -1,0 +1,21 @@
+Repository      : arch4edu
+Name            : gmsh
+Version         : 4.9.5-2
+Description     : An automatic 3D finite element mesh generator with pre and post-processing facilities.
+Architecture    : x86_64
+URL             : http://gmsh.info/
+Licenses        : custom
+Groups          : None
+Provides        : None
+Depends On      : fltk  med  opencascade  cairo  metis  alglib  ann  glu  cgns  lapack
+Optional Deps   : gmsh-docs: docs for gmsh
+                  python2: for gmsh.py
+                  python: for gmsh.py
+                  julia: for gmsh.jl
+Conflicts With  : None
+Replaces        : None
+Download Size   : 8.81 MiB
+Installed Size  : 39.68 MiB
+Packager        : calil (on behalf of Jingbei Li) <i@jingbei.li>
+Build Date      : Tue 08 Mar 2022 02:18:24 AM -05
+Validated By    : MD5 Sum  SHA-256 Sum  Signature

@@ -1,3 +1,5 @@
+% arara: lualatex: { shell: yes }
+% arara: lualatex: { shell: yes }
 \input{dune-cmake-preamble}
 
 \begin{document}
@@ -6,25 +8,30 @@
 
 
 \begin{frame}[fragile]
-	El fichero \lstinline{CMakeLists.txt} nos indica el mínimo de versión de cmake que soporta esta configuración.
-	En este script definiremos todo acerca de la construcción, desde el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
-	Este script empieza con
-	\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required}}
-	\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project}}
-	\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set}}
-	\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable}}
+	El fichero \lstinline{CMakeLists.txt} nos indica el mínimo de
+	versión de cmake que soporta esta configuración.
+
+	En este script definiremos todo acerca de la construcción, desde el
+	código fuente y objetivos, pasando por las pruebas,
+	empaquetamiento, etc.
+
+	Este script empieza con las funciones
+	\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required}},
+	\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project}},
+	\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set}} y
+	\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable}}.
 \end{frame}
 
 \begin{frame}[fragile]
 
-\inputminted{cmake}{CMakeList.txt.sample}
+	\inputminted{cmake}{CMakeList.txt.sample}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{El comando \lstinline{duneproject}}
-	% https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject
-	Es un asistente en el lenguaje \lstinline{bash} que se encuentra en \lstinline{/usr/bin/duneproject}\ldots
+	\frametitle{El comando \href{https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject}{\lstinline{duneproject}}}
+
+	Es un script asistente escrito en el lenguaje \lstinline{bash} que se encuentra en \lstinline{/usr/bin/duneproject}\ldots.
 
 \end{frame}
 
@@ -55,5 +62,6 @@
 \end{frame}
 
 \end{document}
-%https://cliutils.gitlab.io/modern-cmake/
-%https://www.dune-project.org/sphinx/content/sphinx/core-2.7/
+% Recursos
+% https://cliutils.gitlab.io/modern-cmake/
+% https://www.dune-project.org/sphinx/content/sphinx/core-2.7

@@ -1,3 +1,5 @@
+% arara: lualatex: { shell: yes }
+% arara: lualatex: { shell: yes }
 \input{dune-command-line-preamble}
 
 \begin{document}
@@ -67,7 +69,7 @@
 		\item
 		      Los proyectos de software, como \href{https://dune-project.org}{Dune Project}, toman la forma de código fuente.
 		\item
-		Es un conjunto de instrucciones de cómputo legibles para el humano.
+		      Es un conjunto de instrucciones de cómputo legibles para el humano.
 		\item Linux está siendo escrito principalmente en C.
 	\end{itemize}
 \end{frame}
@@ -91,26 +93,26 @@
 		\centering\footnotesize
 		\begin{tabular}{cc}
 			\toprule
-			Comando                 & Utilidad
+			Comando                                & Utilidad
 			\tabularnewline
 			\midrule
-			\lstinline|pwd|  & Muestra la ruta absoluta del directorio actual.
+			\lstinline|pwd|                        & Muestra la ruta absoluta del directorio actual.
 			\tabularnewline
-			\lstinline|cd|  & Navega al home del usuario.
+			\lstinline|cd|                         & Navega al home del usuario.
 			\tabularnewline
-			\lstinline|ls|  & Lista los archivos del directorio en el que se encuentra.
+			\lstinline|ls|                         & Lista los archivos del directorio en el que se encuentra.
 			\tabularnewline
-			\lstinline|cp origen destino|  & Copia un archivo origen al destino.
+			\lstinline|cp origen destino|          & Copia un archivo origen al destino.
 			\tabularnewline
-			\lstinline|mkdir nombre|  & Crea una carpeta vacía llamada nombre.
+			\lstinline|mkdir nombre|               & Crea una carpeta vacía llamada nombre.
 			\tabularnewline
-			\lstinline|find /foo/bar -name '*.cc'|  & Busca archivos con extensión \lstinline|.cc| en la ruta \lstinline|/foo/bar|.
+			\lstinline|find /foo/bar -name '*.cc'| & Busca archivos con extensión \lstinline|.cc| en la ruta \lstinline|/foo/bar|.
 			\tabularnewline
-			\lstinline|chmod +x ejemplo| & Dar permisos de ejecución al binario ejemplo.
+			\lstinline|chmod +x ejemplo|           & Dar permisos de ejecución al binario ejemplo.
 			\tabularnewline
-			\lstinline|rm archivo| & Elimina el inodo del archivo.
+			\lstinline|rm archivo|                 & Elimina el inodo del archivo.
 			\tabularnewline
-			\lstinline|cat archivo| & Imprime el contenido de un archivo a la salida estándar.
+			\lstinline|cat archivo|                & Imprime el contenido de un archivo a la salida estándar.
 			\tabularnewline
 			\bottomrule
 		\end{tabular}
@@ -119,22 +121,22 @@
 \end{frame}
 
 %	\frametitle{Usando el emulador de terminal}
-	% Una consola es un display del sistema
-	% En todo lo que sigue, usaremos el shell \lstinline{bash}.
+% Una consola es un display del sistema
+% En todo lo que sigue, usaremos el shell \lstinline{bash}.
 
-	% GNU General Public License v2.0
-	% GNU Lesser General Public License v2.1
-	% BSD 3-Clause "New" or "Revised" License
+% GNU General Public License v2.0
+% GNU Lesser General Public License v2.1
+% BSD 3-Clause "New" or "Revised" License
 
-	% El terminal te da acceso al shell, que nos da acceso al sistema operativo subyacente.
-	% El shell, sabe interactuar entre el usuario y el sistema operativo.
+% El terminal te da acceso al shell, que nos da acceso al sistema operativo subyacente.
+% El shell, sabe interactuar entre el usuario y el sistema operativo.
 
-	% CLI Command Line Interface
+% CLI Command Line Interface
 
-	% pwd
-	% El cursor parpadeante al final de la línea es donde se ingresan los comandos basados ​​en texto. Puede comenzar a experimentar con un comando simple, Imprimir directorio de trabajo (pwd), que muestra la carpeta actual en la que se encuentra en la pantalla. Escriba pwd y presione Entrar.
+% pwd
+% El cursor parpadeante al final de la línea es donde se ingresan los comandos basados ​​en texto. Puede comenzar a experimentar con un comando simple, Imprimir directorio de trabajo (pwd), que muestra la carpeta actual en la que se encuentra en la pantalla. Escriba pwd y presione Entrar.
 
-	% Todos los comandos que ingresa funcionan de la misma manera: ingresa el comando, incluye cualquier parámetro para extender el uso del comando y presiona Enter para ejecutar la línea de comando que ingresó. Escribe en la Terminal: uname -a y presiona Enter. Esto muestra información del sistema con respecto a Mint
+% Todos los comandos que ingresa funcionan de la misma manera: ingresa el comando, incluye cualquier parámetro para extender el uso del comando y presiona Enter para ejecutar la línea de comando que ingresó. Escribe en la Terminal: uname -a y presiona Enter. Esto muestra información del sistema con respecto a Mint
 
 \begin{frame}[fragile]
 	\begin{lstlisting}
@@ -150,7 +152,7 @@
 	\lstinputlisting[
 		caption={Programa \texttt{hello-linux.cc}.},
 		label=hello-linux.cc,
-	]{../../../sandbox/hello-linux.cc}
+	]{../../sandbox/hello-linux.cc}
 
 
 \end{frame}
@@ -161,7 +163,7 @@
 	\lstinputlisting[
 		caption={Programa \texttt{dune-basics.cc}.},
 		label=dune-basics.cc,
-	]{../../../src/dune-basics.cc}
+	]{../../src/dune-basics.cc}
 
 \end{frame}
 
@@ -171,7 +173,7 @@
 	\lstinputlisting[
 		caption={Programa \texttt{dune-basics.cc}.},
 		label=dune-basics.cc,
-	]{../../../sandbox/dune-math-constants.cc}
+	]{../../sandbox/dune-math-constants.cc}
 
 \end{frame}
 %https://archlinux.org/logos/archlinux-icon-crystal-256.svg

@@ -1,3 +1,5 @@
+% arara: lualatex: { shell: yes }
+% arara: lualatex: { shell: yes }
 \input{dune-doxygen-preamble}
 
 \begin{document}
@@ -184,7 +186,7 @@ INPUT                 += @top_srcdir@/dune/ \
 		\centering\footnotesize
 		\begin{tabular}{cccp{50pt}}
 			\toprule
-			Acción           & Arch                   & Red Hat/Fedora         & Debian/Ubuntu
+			Acción           & Arch                  & Red Hat/Fedora          & Debian/Ubuntu
 			\tabularnewline
 			\midrule
 			Instala paquetes & \lstinline|pacman -S| & \lstinline|dnf install| & \lstinline|apt install|
