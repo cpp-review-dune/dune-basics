@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 from dune.common import FieldVector
@@ -9,4 +9,4 @@ def myvector(array):
 
 
 if __name__ == "__main__":
-    print(myvector([0, 0]))
+    print(myvector([0, 0, 0, 0]))

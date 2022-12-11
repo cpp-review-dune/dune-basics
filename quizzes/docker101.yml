@@ -3,7 +3,7 @@ exam:
   exam_description: Docker básico.
     Remember, this can be a practice exam, a exam proctored by a teacher, a survey, or whatever you want.
   exam_author: "C++ Review Dune"
-  exam_edit_date: "18/08/2021"
+  exam_edit_date: "30/12/2022"
   exam_allowed_time: 120
   exam_allowed_time_units: "seconds"
   exam_passing_score: 70

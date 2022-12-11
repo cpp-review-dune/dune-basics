@@ -4,8 +4,6 @@
 #include <dune/common/fvector.hh>
 #include <iostream>
 
-//using namespace fmt;
-
 int main(int argc, char **argv)
 {
   fmt::print(fg(fmt::color::aquamarine) | fmt::emphasis::bold,
@@ -20,5 +18,5 @@ int main(int argc, char **argv)
              "Espacio vectorial campos: {}\n", "h");
   std::cout << x << "\n";
 
-  // Dune::DenseVector<>;
+  // Dune::DenseVector<float>;
 }
