@@ -8,13 +8,17 @@
 
 \begin{frame}[fragile]
 	\frametitle{Acerca de \texttt{gmsh}}
-	Es un software de código abierto para mallas tridimensionales de elementos
-	finitos y visualización de datos, cuenta su propio lenguaje de scripting y cuatro módulos:
+
+	Es un software de código abierto para mallas tridimensionales de
+	elementos finitos y visualización de datos, cuenta su propio
+	lenguaje de scripting y cuatro módulos:
 
 	\begin{description}
 		\item[\texttt{geometry}]
 
-			capa geométrica orientado a objetos para la creación de formas tridimensionales. Motores disponibles: Gmsh CAD y OpenCascade.
+			capa geométrica orientado a objetos para la creación de
+			formas tridimensionales.
+			Motores disponibles: Gmsh CAD y OpenCascade.
 
 		\item[\texttt{meshing}]
 
@@ -32,8 +36,8 @@
 	\
 
 	Estamos interesados en usar la interfaz de línea de comandos
-	\verb|gmsh|, además de conocer dicho lenguaje de scripting así como
-	sus APIs.
+	\verb|gmsh|, además de conocer dicho lenguaje de scripting así
+	como sus APIs.
 
 	\
 
@@ -42,29 +46,42 @@
 \end{frame}
 
 \begin{frame}[fragile]
-	Si estamos usando el repositorio \verb|arch4edu| o el \verb|aur|, instale con \verb|yay -Sy gmsh gmsh-docs|.\scriptsize
+	Si estamos usando el repositorio \verb|arch4edu| o el \verb|aur|,
+	instale con \verb|yay -Sy gmsh gmsh-docs|.\scriptsize
 
 	\inputminted{bash}{arch4edu.sample}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Comandos elementales}
+
 \end{frame}
 
 \begin{frame}
 	\frametitle{Objetivos de esta introdución}
+
 	A number of advanced.
 	\begin{itemize}
-		\item Correr los \href{https://github.com/orgs/cpp-review-dune/packages}{imágenes prediseñadas} con el programa \lstinline{docker} en sistemas tipo Unix.
-		\item Crear una malla con \lstinline{gmsh} a través de la API (C/C++, Python, Julia).
-		\item Realizar los ejemplos resueltos del \textsc{Dune book}.
+		\item
+		
+		Correr los \href{https://github.com/orgs/cpp-review-dune/packages}{imágenes prediseñadas} con el programa \lstinline{docker} en sistemas tipo Unix.
+
+		\item
+		
+		Crear una malla con \lstinline{gmsh} a través de la API (C/C++, Python, Julia).
+		
+		\item
+		
+		Realizar los ejemplos resueltos del \textsc{Dune book}.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Conociendo el sistema operativo \href{https://archlinux.org}{Arch Linux}}
 
-	Es una distribución GNU/Linux de propósito general, desarrollada\footnote{El líder del proyecto es \href{https://wiki.archlinux.org/title/User:Anthraxx}{\texttt{Anthraxx}}, desarrollador alemán del kernel \href{https://github.com/anthraxx/linux-hardened}{\texttt{linux-hardened}}.} independientemente para procesadores x86-64, que se adhiere a los principios de simplicidad, modernidad, pragmatismo, centrado en usuarios y versatilidad.
+	Es una distribución GNU/Linux de propósito general,
+	desarrollada\footnote{El líder del proyecto es
+	\href{https://wiki.archlinux.org/title/User:Anthraxx}{\texttt{Anthraxx}}, desarrollador alemán del kernel \href{https://github.com/anthraxx/linux-hardened}{\texttt{linux-hardened}}.} independientemente para procesadores x86-64, que se adhiere a los principios de simplicidad, modernidad, pragmatismo, centrado en usuarios y versatilidad.
 
 	\
 
