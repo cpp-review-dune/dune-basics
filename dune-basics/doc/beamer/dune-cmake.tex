@@ -9,23 +9,37 @@
 }
 
 \begin{frame}[fragile]
-	El fichero \lstinline{CMakeLists.txt} nos indica el mínimo de
-	versión de cmake que soporta esta configuración.
-
-	En este script definiremos todo acerca de la construcción, desde
-	el código fuente y objetivos, pasando por las pruebas,
-	empaquetamiento, etc.
-
-	Este script empieza con las funciones
-	\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required}},
-	\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project}},
-	\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set}} y
-	\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable}}.
-\end{frame}
-
-\begin{frame}[fragile]
+	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
 
 	\inputminted{cmake}{CMakeList.txt.sample}
+
+	\begin{itemize}
+		\item
+
+		\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required}}
+		indica la versión mínima de cmake que requiere para ejecutar.
+
+		\item
+		
+		\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project}}
+		define el nombre del proyecto, su número de versión y que
+		está escrito en el lenguaje de programación C++.
+		
+		\item
+
+		\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set}}
+		asigna la variable de entorno, en este caso establece la versión del estándar C++ 20.
+
+		\item
+
+		\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable}}
+		crea un ejecutable a partir de un script en C++.
+
+	\end{itemize}
+
+	En este script definimos los requisitos para la construcción, desde
+	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
+	Y delegaremos la tarea de compilación al programa make.
 
 \end{frame}
 
@@ -35,8 +49,7 @@
 	}
 
 	Es un script asistente escrito en el lenguaje \lstinline{bash}
-	que se encuentra en \lstinline{/usr/bin/duneproject}\ldots.
-
+	que se encuentra en \lstinline{/usr/bin/duneproject} dentro del paquete dune-common.
 \end{frame}
 
 \begin{frame}\transblindsvertical
@@ -66,6 +79,10 @@
 \end{frame}
 
 \end{document}
-% Recursos
-% https://cliutils.gitlab.io/modern-cmake
-% https://www.dune-project.org/sphinx/content/sphinx/core-2.7
+%https://cliutils.gitlab.io/modern-cmake
+%https://www.dune-project.org/sphinx/content/sphinx/core/index.html
+%https://sci-hub.ru/10.1088/1742-6596/396/5/052021
+%https://sci-hub.ru/10.1201/9781315382395-9
+%https://discourse.cmake.org/t/professional-cmake-a-practical-guide-12th-edition/5440
+%https://www.packtpub.com/product/modern-cmake-for-c/9781801070058
+%https://github.com/PacktPublishing/CMake-Best-Practices
