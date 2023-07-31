@@ -1,5 +1,3 @@
-% arara: lualatex: { shell: yes }
-% arara: lualatex: { shell: yes }
 \input{dune-cmake-preamble}
 
 \begin{document}
@@ -9,47 +7,47 @@
 }
 
 \begin{frame}[fragile]
-	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
+	Supongamos que tenemos el siguiente script \mintinline{plain}{CMakeLists.txt}
 
 	\inputminted{cmake}{CMakeList.txt.sample}
+
+	En este script definimos los requisitos para la construcción, desde
+	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
+	Y delegaremos la tarea de compilación al programa \mintinline{bash}{make}.
 
 	\begin{itemize}
 		\item
 
-		\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required}}
-		indica la versión mínima de cmake que requiere para ejecutar.
+		\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{
+			\mintinline{cmake}{cmake_minimum_required()}
+		} indica la versión mínima de \mintinline{bash}{cmake} que requiere para ejecutar.
 
 		\item
 		
-		\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project}}
+		\href{https://cmake.org/cmake/help/latest/command/project.html}{\mintinline{cmake}{project()}}
 		define el nombre del proyecto, su número de versión y que
 		está escrito en el lenguaje de programación C++.
 		
 		\item
 
-		\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set}}
+		\href{https://cmake.org/cmake/help/latest/command/set.html}{\mintinline{cmake}{set()}}
 		asigna la variable de entorno, en este caso establece la versión del estándar C++ 20.
 
 		\item
 
-		\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable}}
+		\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\mintinline{cmake}{add_executable()}}
 		crea un ejecutable a partir de un script en C++.
-
 	\end{itemize}
-
-	En este script definimos los requisitos para la construcción, desde
-	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
-	Y delegaremos la tarea de compilación al programa make.
-
 \end{frame}
 
 \begin{frame}
 	\frametitle{
-		El comando \href{https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject}{\lstinline{duneproject}}
+		El comando \href{https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject}{\mintinline{cmake}{duneproject}}
 	}
 
-	Es un script asistente escrito en el lenguaje \lstinline{bash}
-	que se encuentra en \lstinline{/usr/bin/duneproject} dentro del paquete dune-common.
+	Es un script asistente escrito en el lenguaje \mintinline{bash}{bash}
+	que se encuentra en \mintinline{bash}{/usr/bin/duneproject}
+	dentro del paquete \lstinline{dune-common}.
 \end{frame}
 
 \begin{frame}\transblindsvertical
