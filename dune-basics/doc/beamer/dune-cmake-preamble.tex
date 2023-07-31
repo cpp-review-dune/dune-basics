@@ -16,8 +16,8 @@
 \usepackage{longtable}
 \usepackage{minted}
 
-\usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-\addbibresource{dune-cmake-references.bib}
+% \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
+% \addbibresource{dune-cmake-references.bib}
 
 \title{
 	Introducción a la herramienta cmake~\cmake{}
@@ -62,29 +62,29 @@
 
 }
 
-\setbeamertemplate{bibliography item}{%
-	\ifboolexpr{ test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
-		or test {\ifentrytype{collection}} or test {\ifentrytype{mvcollection}}
-		or test {\ifentrytype{reference}} or test {\ifentrytype{mvreference}} }
-	{\setbeamertemplate{bibliography item}[book]}
-	{\ifentrytype{online}
-		{\setbeamertemplate{bibliography item}[online]}
-		{\setbeamertemplate{bibliography item}[article]}}%
-	\usebeamertemplate{bibliography item}}
+% \setbeamertemplate{bibliography item}{%
+% 	\ifboolexpr{ test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
+% 		or test {\ifentrytype{collection}} or test {\ifentrytype{mvcollection}}
+% 		or test {\ifentrytype{reference}} or test {\ifentrytype{mvreference}} }
+% 	{\setbeamertemplate{bibliography item}[book]}
+% 	{\ifentrytype{online}
+% 		{\setbeamertemplate{bibliography item}[online]}
+% 		{\setbeamertemplate{bibliography item}[article]}}%
+% 	\usebeamertemplate{bibliography item}}
 
-\defbibenvironment{bibliography}
-{\list{}
-	{\settowidth{\labelwidth}{\usebeamertemplate{bibliography item}}%
-		\setlength{\leftmargin}{\labelwidth}%
-		\setlength{\labelsep}{\biblabelsep}%
-		\addtolength{\leftmargin}{\labelsep}%
-		\setlength{\itemsep}{\bibitemsep}%
-		\setlength{\parsep}{\bibparsep}}}
-{\endlist}
-{\item}
+% \defbibenvironment{bibliography}
+% {\list{}
+% 	{\settowidth{\labelwidth}{\usebeamertemplate{bibliography item}}%
+% 		\setlength{\leftmargin}{\labelwidth}%
+% 		\setlength{\labelsep}{\biblabelsep}%
+% 		\addtolength{\leftmargin}{\labelsep}%
+% 		\setlength{\itemsep}{\bibitemsep}%
+% 		\setlength{\parsep}{\bibparsep}}}
+% {\endlist}
+% {\item}
 
-\newcommand{\cmake}{%
-	\begingroup\normalfont
-	\includegraphics[height=2\fontcharht\font`B]{cmake}%
-	\endgroup
-}
+% \newcommand{\cmake}{%
+% 	\begingroup\normalfont
+% 	\includegraphics[height=2\fontcharht\font`B]{cmake}%
+% 	\endgroup
+% }

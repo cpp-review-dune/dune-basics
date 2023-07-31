@@ -8,3 +8,4 @@ fi
 
 [ -d build/dune-env ] || python -m venv --system-site-packages build/dune-env
 cmake -S dune-basics -B build
+cmake --build build
