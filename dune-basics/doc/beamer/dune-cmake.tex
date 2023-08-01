@@ -73,134 +73,134 @@
 	% Ejemplo con ctest: https://coderefinery.github.io/cmake-workshop/testing
 \end{frame}
 
-\begin{frame}
-	\frametitle{Instalación}
-	Esta tecnología imprescindible en el lenguaje C++ se encuentra
-	disponible en mayoría de repositorios de distribuciones
-	GNU/Linux importantes.
-	Si desea tener una versión actual, puede instalar desde el
-	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
+% \begin{frame}
+% 	\frametitle{Instalación}
+% 	Esta tecnología imprescindible en el lenguaje C++ se encuentra
+% 	disponible en mayoría de repositorios de distribuciones
+% 	GNU/Linux importantes.
+% 	Si desea tener una versión actual, puede instalar desde el
+% 	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
 
-	\begin{verbatim}
-		[user@host somedir]$ sudo pacman -Syu cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
-	\end{verbatim}
+% 	\begin{verbatim}
+% 		[user@host somedir]$ sudo pacman -Syu cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
+% 	\end{verbatim}
 
-\end{frame}
-
-\begin{frame}
-	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
-	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
-
-	\inputminted{cmake}{CMakeList.txt.sample}
-
-	Entendamos, este script en más detalle.
-	En este script definimos los requisitos para la construcción, desde
-	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
-	Y delegaremos la tarea de compilación al programa \lstinline{make}.
-
-	\begin{itemize}
-		\item
-
-		\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required()}}
-		indica la versión mínima de \lstinline{cmake} que requiere para ejecutar.
-
-		\item
-		
-		\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project()}}
-		define el nombre del proyecto, su número de versión y que
-		está escrito en el lenguaje de programación C++.
-		
-		\item
-
-		\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set()}}
-		asigna la variable de entorno, en este caso establece la versión del estándar C++ 20.
-
-		\item
-
-		\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable()}}}
-		crea un ejecutable a partir de un script en C++.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{El proceso de construcción CMake}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Tipos de construcción CMake}
-
-	\begin{description}
-		\item[Debug]
-
-		\item[Release]
-
-		\item[RelWithDebInfo]
-
-		\item[MinSizeRel]
-
-		\item[None]
-	\end{description}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Generación automática de documentación con CMake}
-	La documentación es una parte esencial de cualquier proyecto
-	exitoso.
-
-	Veamos cómo integrar Doxygen con CMake para generar
-	automáticamante la documentación para proyectos con CMake.
-
-	CMake generará un archivo \lstinline{Doxyfile}.
-
-	Esperamos que Doxygen genere la documentación de la interfaz de
-	programación de aplicaciones (API) para cada clase y sus diagramas de herencia con dot de graphviz
-\end{frame}
-
-\begin{frame}
-	\frametitle{Pruebas con ctest}
-\end{frame}
-
-% Reproducible builds, superbuilds
-
-% TODO:
-% Se va a separar una diapositiva de dune-cmake cuando esté terminado.
-% Ejemplo: que sea de dune con dune-common, dune-geometry cmake.
-
-\begin{frame}
-	\frametitle{
-		El comando \href{https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject}{\lstinline{duneproject}}
-	}
-
-	Es un script asistente escrito en el lenguaje \lstinline{bash}
-	que se encuentra en \lstinline{duneproject}
-	dentro del paquete \lstinline{dune-common}.
-\end{frame}
-
-% \begin{frame}\transblindsvertical
-% 	\frametitle{Referencias}
-% 	%------------------------------------------------------------ 1
-% 	\only<1>{
-% 		\begin{itemize}
-% 			\item Libros
-% 			      \nocite{*}
-% 			      \printbibliography[heading=none,keyword=book]
-% 		\end{itemize}
-% 	}
-% 	%------------------------------------------------------------ 2
-% 	\only<2>{
-% 		\begin{itemize}
-% 			\item Artículos
-% 			      \printbibliography[heading=none,keyword=paper]
-% 		\end{itemize}
-% 	}
-% 	%------------------------------------------------------------ 3
-% 	\only<3>{
-% 		\begin{itemize}
-% 			\item Sitios web
-% 			      \printbibliography[heading=none,keyword=online]
-% 		\end{itemize}
-% 	}
 % \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
+% 	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
+
+% 	\inputminted{cmake}{CMakeList.txt.sample}
+
+% 	Entendamos, este script en más detalle.
+% 	En este script definimos los requisitos para la construcción, desde
+% 	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
+% 	Y delegaremos la tarea de compilación al programa \lstinline{make}.
+
+% 	\begin{itemize}
+% 		\item
+
+% 		\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required()}}
+% 		indica la versión mínima de \lstinline{cmake} que requiere para ejecutar.
+
+% 		\item
+		
+% 		\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project()}}
+% 		define el nombre del proyecto, su número de versión y que
+% 		está escrito en el lenguaje de programación C++.
+		
+% 		\item
+
+% 		\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set()}}
+% 		asigna la variable de entorno, en este caso establece la versión del estándar C++ 20.
+
+% 		\item
+
+% 		\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable()}}}
+% 		crea un ejecutable a partir de un script en C++.
+% 	\end{itemize}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{El proceso de construcción CMake}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Tipos de construcción CMake}
+
+% 	\begin{description}
+% 		\item[Debug]
+
+% 		\item[Release]
+
+% 		\item[RelWithDebInfo]
+
+% 		\item[MinSizeRel]
+
+% 		\item[None]
+% 	\end{description}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Generación automática de documentación con CMake}
+% 	La documentación es una parte esencial de cualquier proyecto
+% 	exitoso.
+
+% 	Veamos cómo integrar Doxygen con CMake para generar
+% 	automáticamante la documentación para proyectos con CMake.
+
+% 	CMake generará un archivo \lstinline{Doxyfile}.
+
+% 	Esperamos que Doxygen genere la documentación de la interfaz de
+% 	programación de aplicaciones (API) para cada clase y sus diagramas de herencia con dot de graphviz
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Pruebas con ctest}
+% \end{frame}
+
+% % Reproducible builds, superbuilds
+
+% % TODO:
+% % Se va a separar una diapositiva de dune-cmake cuando esté terminado.
+% % Ejemplo: que sea de dune con dune-common, dune-geometry cmake.
+
+% \begin{frame}
+% 	\frametitle{
+% 		El comando \href{https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject}{\lstinline{duneproject}}
+% 	}
+
+% 	Es un script asistente escrito en el lenguaje \lstinline{bash}
+% 	que se encuentra en \lstinline{duneproject}
+% 	dentro del paquete \lstinline{dune-common}.
+% \end{frame}
+
+\begin{frame}\transblindsvertical
+	\frametitle{Referencias}
+	%------------------------------------------------------------ 1
+	\only<1>{
+		\begin{itemize}
+			\item Libros
+			      \nocite{*}
+			      \printbibliography[heading=none,keyword=book]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 2
+	\only<2>{
+		\begin{itemize}
+			\item Artículos
+			      \printbibliography[heading=none,keyword=paper]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 3
+	\only<3>{
+		\begin{itemize}
+			\item Sitios web
+			      \printbibliography[heading=none,keyword=online]
+		\end{itemize}
+	}
+\end{frame}
 
 \end{document}
 %https://cliutils.gitlab.io/modern-cmake
