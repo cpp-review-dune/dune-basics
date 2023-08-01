@@ -7,6 +7,35 @@
 }
 
 \begin{frame}[fragile]
+	\frametitle{CMake}
+	Es un generador de sistemas de compilación de código abierto e
+	independiente del compilador y la plataforma, es decir, produce
+	instrucciones para otros sistemas de compilación como Makefile,
+	Ninja, Visual Studio, Qt Creator, Android Studio y Xcode.
+	También incluye características que permiten la instalación,
+	empaquetamiento y soporte nativo de pruebas de software.
+
+	\lstinline{cmake} es una herramienta para automatizar la
+	generación de \lstinline{Makefile}.
+
+	Tres herramientas de línea de comando
+
+	\begin{description}
+		\item[\href{https://man.archlinux.org/man/cmake.1}{\lstinline{/usr/bin/cmake}}]
+
+		\item[\href{https://man.archlinux.org/man/cpack.1}{\lstinline{/usr/bin/cpack}}]
+
+		\item[\href{https://man.archlinux.org/man/ctest.1}{\lstinline{/usr/bin/ctest}}]
+	\end{description}
+
+	Tres herramientas interactivas
+
+	\begin{description}
+		\item[\href{https://man.archlinux.org/man/ccmake.1}{\lstinline{/usr/bin/ccmake}}]
+
+		\item[\href{https://man.archlinux.org/man/cmake-gui.1}{\lstinline{/usr/bin/cmake-gui}}]
+	\end{description}
+
 	% TODO: Teoría
 	% Explicar la necesidad de cmake (ver Scott, Rafal)
 	% Instalación de cmake en Arch Linux.
@@ -17,12 +46,29 @@
 	% Ejemplo: un ejemplo de álgebra lineal con BLAS del libro de Simon.
 	% Ejemplo: documentación con doxygen (Berner, Rafal).
 	% Ejemplo con ctest: https://coderefinery.github.io/cmake-workshop/testing
-	\lstinline{cmake} es una herramienta para automatizar la
-	generación de \lstinline{Makefile}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Instalación}
+	Esta tecnología imprescindible en el lenguaje C++ se encuentra
+	disponible en mayoría de repositorios de distribuciones
+	GNU/Linux importantes.
+	Si desea tener una versión actual, puede instalar desde el
+	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
+
+	\begin{verbatim}
+		[user@host somedir]$ sudo pacman -Syu cmake
+	\end{verbatim}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
 	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
 
 	\inputminted{cmake}{CMakeList.txt.sample}
 
+	Entendamos, este script en más detalle.
 	En este script definimos los requisitos para la construcción, desde
 	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
 	Y delegaremos la tarea de compilación al programa \lstinline{make}.
@@ -51,6 +97,25 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{El proceso de construcción CMake}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tipos de construcción CMake}
+
+	\begin{description}
+		\item[Debug]
+
+		\item[Release]
+
+		\item[RelWithDebInfo]
+
+		\item[MinSizeRel]
+
+		\item[None]
+	\end{description}
+\end{frame}
 % TODO:
 % Se va a separar una diapositiva de dune-cmake cuando esté terminado.
 % Ejemplo: que sea de dune con dune-common, dune-geometry cmake.
