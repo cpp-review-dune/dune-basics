@@ -8,14 +8,15 @@
 
 \begin{frame}[fragile]
 	\frametitle{CMake}
-	Es un generador de sistemas de compilación de código abierto e
-	independiente del compilador y la plataforma, es decir, produce
-	instrucciones para otros sistemas de compilación como Makefile,
-	Ninja, Visual Studio, Qt Creator, Android Studio y Xcode.
+	Es un \emph{generador de sistemas de compilación} de código
+	abierto e independiente del compilador y la plataforma, es decir,
+	produce instrucciones para otros sistemas de compilación como
+	Makefile, Ninja, Visual Studio, Qt Creator, Android Studio y
+	Xcode.
 	También incluye características que permiten la instalación,
 	empaquetamiento y soporte nativo de pruebas de software.
 	
-	Objetivos:
+	Resultados del aprendizaje:
 
 	\begin{itemize}
 		\item
@@ -42,7 +43,19 @@
 
 	% \lstinline{cmake} es una herramienta para automatizar la
 	% generación de \lstinline{Makefile}.
+	% TODO: Teoría
+	% Explicar la necesidad de cmake (ver Scott, Rafal)
+	% Instalación de cmake en Arch Linux.
+	% Mencionar el manual pages de cmake
+	% conceptos: build tree, source tree
+	% Etapas de cmake con un diagrama.
+	% TODO: Práctica
+	% Ejemplo: un ejemplo de álgebra lineal con BLAS del libro de Simon.
+	% Ejemplo: documentación con doxygen (Berner, Rafal).
+	% Ejemplo con ctest: https://coderefinery.github.io/cmake-workshop/testing
+\end{frame}
 
+\begin{frame}[fragile]
 	Tres herramientas de línea de comando
 
 	\begin{description}
@@ -60,32 +73,21 @@
 
 		\item[\href{https://man.archlinux.org/man/cmake-gui.1}{\lstinline{/usr/bin/cmake-gui}}]
 	\end{description}
-
-	% TODO: Teoría
-	% Explicar la necesidad de cmake (ver Scott, Rafal)
-	% Instalación de cmake en Arch Linux.
-	% Mencionar el manual pages de cmake
-	% conceptos: build tree, source tree
-	% Etapas de cmake con un diagrama.
-	% TODO: Práctica
-	% Ejemplo: un ejemplo de álgebra lineal con BLAS del libro de Simon.
-	% Ejemplo: documentación con doxygen (Berner, Rafal).
-	% Ejemplo con ctest: https://coderefinery.github.io/cmake-workshop/testing
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{Instalación}
-% 	Esta tecnología imprescindible en el lenguaje C++ se encuentra
-% 	disponible en mayoría de repositorios de distribuciones
-% 	GNU/Linux importantes.
-% 	Si desea tener una versión actual, puede instalar desde el
-% 	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
+\begin{frame}[fragile]
+	\frametitle{Instalación}
+	Esta tecnología imprescindible en el lenguaje C++ se encuentra
+	disponible en mayoría de repositorios de distribuciones
+	GNU/Linux importantes.
+	Si desea tener una versión actual, puede instalar desde el
+	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
 
-% 	\begin{verbatim}
-% 		[user@host somedir]$ sudo pacman -Syu cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
-% 	\end{verbatim}
+	\begin{verbatim}
+		[user@host somedir]$ sudo pacman -Syu cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
+	\end{verbatim}
 
-% \end{frame}
+\end{frame}
 
 % \begin{frame}
 % 	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
