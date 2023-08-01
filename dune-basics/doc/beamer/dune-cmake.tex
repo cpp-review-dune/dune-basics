@@ -14,9 +14,34 @@
 	Ninja, Visual Studio, Qt Creator, Android Studio y Xcode.
 	También incluye características que permiten la instalación,
 	empaquetamiento y soporte nativo de pruebas de software.
+	
+	Objetivos:
 
-	\lstinline{cmake} es una herramienta para automatizar la
-	generación de \lstinline{Makefile}.
+	\begin{itemize}
+		\item
+
+		Construir diversos ejemplos de proyectos de CMake en los
+		lenguajes C/C++/Fortran/Python que construyan ejecutables u
+		objetos compartidos/estáticos/interfaces.
+
+		\item
+
+		Correr pruebas con ctest, catch2, gtest, pytest.
+
+		\item
+
+		Usar dependencias de terceros en un proyecto CMake.
+	\end{itemize}
+
+	Está orientado a cualquier estudiante, profesor, investigador,
+	programador que quiera aprender de Arch Linux y quiera aprender
+	a usar efectivamente CMake en un proyecto basado en Dune.
+
+	No se se asume que tenga experiencia en GNU/Linux o C++, pero
+	sí familiarizado con algún lenguaje de programación.
+
+	% \lstinline{cmake} es una herramienta para automatizar la
+	% generación de \lstinline{Makefile}.
 
 	Tres herramientas de línea de comando
 
@@ -57,7 +82,7 @@
 	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
 
 	\begin{verbatim}
-		[user@host somedir]$ sudo pacman -Syu cmake
+		[user@host somedir]$ sudo pacman -Syu cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
 	\end{verbatim}
 
 \end{frame}
@@ -116,6 +141,27 @@
 		\item[None]
 	\end{description}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Generación automática de documentación con CMake}
+	La documentación es una parte esencial de cualquier proyecto
+	exitoso.
+
+	Veamos cómo integrar Doxygen con CMake para generar
+	automáticamante la documentación para proyectos con CMake.
+
+	CMake generará un archivo \lstinline{Doxyfile}.
+
+	Esperamos que Doxygen genere la documentación de la interfaz de
+	programación de aplicaciones (API) para cada clase y sus diagramas de herencia con dot de graphviz
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pruebas con ctest}
+\end{frame}
+
+% Reproducible builds, superbuilds
+
 % TODO:
 % Se va a separar una diapositiva de dune-cmake cuando esté terminado.
 % Ejemplo: que sea de dune con dune-common, dune-geometry cmake.
@@ -160,4 +206,4 @@
 %https://cliutils.gitlab.io/modern-cmake
 %https://www.dune-project.org/sphinx/content/sphinx/core/index.html
 %https://www.dune-project.org/sphinx/content/sphinx/core-2.7
-%https://iopscience.iop.org/article/10.1088/1742-6596/396/5/052021
+%https://github.com/toeb/moderncmake/blob/master/Modern%20CMake.pdf
