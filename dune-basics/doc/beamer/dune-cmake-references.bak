@@ -1,23 +1,5 @@
 % Encoding: UTF-8
 
-@online{ArchWikicmake,
-  author = {ArchWiki},
-  date = {2022-12-16},
-  title = {CMake package guidelines},
-  url = {https://wiki.archlinux.org/title/CMake_package_guidelines},
-  urldate = {2022-12-16},
-  keywords = {online},
-  year = {2022},
-}
-
-% @book{Scott2023,
-%   author = {Craig Scott},
-%   title = {Professional CMake: A Practical Guide},
-%   edition = {Fifteen},
-%   keywords = {book},
-%   year = {2023},
-% }
-
 % @book{Świdziński2022,
 %   author = {Rafał Świdziński},
 %   title = {Modern CMake for C++},
@@ -28,16 +10,6 @@
 %   year = {2022},
 % }
 
-@book{Berner2022,
-  author = {Dominik Berner and Mustafa Kemal Gilor},
-  title = {CMake Best Practices},
-  edition = {First},
-  isbn = {978-1-803-23972-9},
-  publisher = {Packt},
-  keywords = {book},
-  year = {2022},
-}
-
 % @book{Willmore2016,
 %   author = {Frank T. Willmore and Eric Jankowski and Coray Colina},
 %   title = {Introduction to Scientific and Technical Computing},
@@ -47,17 +19,5 @@
 %   keywords = {book},
 %   year = {2016},
 % }
-
-@article{Clemencic2012,
-  author = {M. Clemencic and P. Mato},
-  date = {2021-01-01},
-  title = {A CMake-based build and configuration framework},
-  doi = {10.1088/1742-6596/396/5/052021},
-  url = {https://dx.doi.org/10.1088/1742-6596/396/5/052021},
-  journal = {Journal of Physics: Conference Series},
-  keywords = {paper},
-  publisher = {IOP Publishing Ltd},
-  year = {2012},
-}
 
 @Comment{jabref-meta: databaseType:biblatex;}
