@@ -9,7 +9,7 @@
 \begin{frame}[fragile]
 	\frametitle{CMake}
 	Es un \emph{generador de sistemas de compilación} de código
-	abierto e independiente del compilador y/o plataforma, es decir,
+	abierto e independiente del compilador o plataforma, es decir,
 	produce instrucciones para otros sistemas de compilación como
 	Makefile, Ninja, Visual Studio, Qt Creator, Android Studio y
 	Xcode.
@@ -30,7 +30,7 @@
 		\item
 
 		Correr pruebas con \lstinline{ctest}, \lstinline{catch2},
-		\lstinline{gtest}, \lstinline{pytest}.
+		\lstinline{gtest} y \lstinline{pytest}.
 
 		\item
 
@@ -40,13 +40,13 @@
 	\
 
 	Está orientado a cualquier estudiante, profesor, investigador,
-	programador que quiera aprender de Arch Linux y quiera aprender
-	a usar efectivamente CMake en un proyecto basado en Dune.
+	programador que quiera aprender a usar efectivamente CMake en un
+	proyecto basado en Dune sobre Arch Linux.
 
 	\
 
-	No se se asume que tenga experiencia en GNU/Linux o C++, pero
-	sí familiarizado con algún lenguaje de programación.
+	No se asume que tenga experiencia en GNU/Linux o C++, pero
+	sí que esté familiarizado con algún lenguaje de programación.
 
 	% \lstinline{cmake} es una herramienta para automatizar la
 	% generación de \lstinline{Makefile}.
@@ -63,7 +63,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-	Tres herramientas de línea de comando
+	Tres herramientas de línea de comando:
 
 	\begin{itemize}
 		\item
@@ -79,7 +79,9 @@
 		\href{https://man.archlinux.org/man/ctest.1}{\lstinline{/usr/bin/ctest}}
 	\end{itemize}
 
-	Tres herramientas interactivas
+	\
+
+	Tres herramientas interactivas:
 
 	\begin{itemize}
 		\item
@@ -94,16 +96,15 @@
 
 \begin{frame}[fragile]
 	\frametitle{Instalación}
-	Esta tecnología imprescindible en el lenguaje C++ se encuentra
-	disponible en mayoría de repositorios de distribuciones
-	GNU/Linux importantes.
-	Si desea tener una versión actual, puede instalar desde el
+	Esta tecnología imprescindible se encuentra disponible en la
+	mayoría de repositorios de distribuciones GNU/Linux importantes.
+	Si desea instalar una versión actual, lo puede encontrar en el
 	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
 
 	\begin{verbatim}
-		[user@host somedir]$ sudo pacman -Syu cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
+		[user@host somedir]$ sudo pacman -Syu
+		[user@host somedir]$ sudo pacman -S cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
 	\end{verbatim}
-
 \end{frame}
 
 \begin{frame}[fragile]
@@ -174,8 +175,7 @@
 
 \begin{frame}[fragile]
 	\frametitle{Generación automática de documentación con CMake}
-	La documentación es una parte esencial de cualquier proyecto
-	exitoso.
+	La documentación es esencial en cualquier proyecto exitoso.
 
 	Veamos cómo integrar Doxygen con CMake para generar
 	automáticamante la documentación para proyectos con CMake.
@@ -202,7 +202,7 @@
 	\frametitle{El comando \href{https://gitlab.dune-project.org/core/dune-common/-/raw/master/bin/duneproject}{\lstinline{duneproject}}}
 
 	Es un script asistente escrito en el lenguaje \lstinline{bash}
-	que se encuentra en \lstinline{duneproject}
+	que se encuentra en \lstinline{/usr/bin/duneproject}
 	dentro del paquete \lstinline{dune-common}.
 \end{frame}
 
