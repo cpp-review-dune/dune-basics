@@ -106,40 +106,40 @@
 
 \end{frame}
 
-% \begin{frame}[fragile]
-% 	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
-% 	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
+\begin{frame}[fragile]
+	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
+	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
 
-% 	\inputminted{cmake}{CMakeList.txt.sample}
+	\inputminted{cmake}{CMakeList.txt.sample}
 
-% 	Entendamos, este script en más detalle.
-% 	En este script definimos los requisitos para la construcción, desde
-% 	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
-% 	Y delegaremos la tarea de compilación al programa \lstinline{make}.
+	Entendamos, este script en más detalle.
+	En este script definimos los requisitos para la construcción, desde
+	el código fuente y objetivos, pasando por las pruebas, empaquetamiento, etc.
+	Y delegaremos la tarea de compilación al programa \lstinline{make}.
 
-% 	\begin{itemize}
-% 		\item
+	\begin{itemize}
+		\item
 
-% 		\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required()}}
-% 		indica la versión mínima de \lstinline{cmake} que requiere para ejecutar.
+		\href{https://cmake.org/cmake/help/latest/command/cmake\_minimum\_required.html}{\lstinline{cmake_minimum_required()}}
+		indica la versión mínima de \lstinline{cmake} que requiere para ejecutar.
 
-% 		\item
+		\item
 		
-% 		\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project()}}
-% 		define el nombre del proyecto, su número de versión y que
-% 		está escrito en el lenguaje de programación C++.
+		\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project()}}
+		define el nombre del proyecto, su número de versión y que
+		está escrito en el lenguaje de programación C++.
 		
-% 		\item
+		\item
 
-% 		\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set()}}
-% 		asigna la variable de entorno, en este caso establece la versión del estándar C++ 20.
+		\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set()}}
+		asigna la variable de entorno, en este caso establece la versión del estándar C++ 20.
 
-% 		\item
+		\item
 
-% 		\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable()}}}
-% 		crea un ejecutable a partir de un script en C++.
-% 	\end{itemize}
-% \end{frame}
+		\href{https://cmake.org/cmake/help/latest/command/add\_executable.html}{\lstinline{add_executable()}}}
+		crea un ejecutable a partir de un script en C++.
+	\end{itemize}
+\end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{El proceso de construcción CMake}
