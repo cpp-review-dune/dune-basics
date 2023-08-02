@@ -1,1 +1,1 @@
-add_latex_document(SOURCE hdnum.tex RCFILE ../.latexmkrc)
+add_latex_document(SOURCE dune-hdnum.tex RCFILE ../.latexmkrc)

@@ -1,0 +1,1 @@
+add_latex_document(SOURCE dune-git.tex RCFILE ../.latexmkrc)

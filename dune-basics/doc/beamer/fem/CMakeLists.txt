@@ -1,1 +1,1 @@
-add_latex_document(SOURCE fem.tex RCFILE ../.latexmkrc)
+add_latex_document(SOURCE dune-fem.tex RCFILE ../.latexmkrc)

@@ -1,1 +1,1 @@
-add_latex_document(SOURCE gitpod.tex RCFILE ../.latexmkrc)
+add_latex_document(SOURCE dune-gitpod.tex RCFILE ../.latexmkrc)
