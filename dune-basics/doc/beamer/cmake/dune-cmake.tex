@@ -23,6 +23,7 @@
 	\href{https://kate-editor.org}{Kate},
 	\href{https://developer.android.com/studio}{Android Studio} y
 	\href{https://developer.apple.com/xcode}{Xcode}.
+
 	Se mantiene centrado en soportar compiladores modernos y cadena
 	de herramientas.
 	Tiene soporte nativo de pruebas de software, empaquetamiento e
@@ -33,17 +34,26 @@
 			\item
 			
 			Construir diversos ejemplos de proyectos de CMake en los
-			lenguajes C/C++/Fortran/Python que construyan ejecutables
-			u objetos compartidos/estáticos/interfaces.
+			lenguajes
+			\href{https://www.open-std.org/jtc1/sc22/wg14}{C}/
+			\href{https://isocpp.org}{C++}/
+			\href{https://fortran-lang.org}{Fortran}/
+			\href{https://www.python.org}{Python} que construyan
+			ejecutables u objetos compartidos/estáticos/interfaces.
 			
 			\item
 			
-			Correr pruebas con \lstinline{ctest}, \lstinline{catch2},
-			\lstinline{gtest} y \lstinline{pytest}.
+			Correr pruebas con
+			\href{https://cmake.org/cmake/help/latest/manual/ctest.1.html}{\lstinline{ctest}},
+			\href{https://github.com/catchorg/Catch2}{\lstinline{catch2}},
+			\href{https://github.com/google/googletest}{\lstinline{gtest}} y
+			\href{https://github.com/pytest-dev/pytest}{\lstinline{pytest}}.
 			
 			\item
 			
-			Usar dependencias de terceros en un proyecto CMake.
+			Usar
+			\href{https://conan.io/center/recipes}{dependencias de terceros}
+			en un proyecto CMake.
 		\end{itemize}
 	\end{block}
 
@@ -82,7 +92,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Instalación}
+	\frametitle{Instalación de software}
 	Esta tecnología imprescindible se encuentra disponible en la
 	mayoría de repositorios de distribuciones GNU/Linux importantes.
 	Si desea instalar una versión actual, lo puede encontrar en el
@@ -90,7 +100,7 @@
 
 	\begin{verbatim}
 		[user@host somedir]$ sudo pacman -Syu # Actualizar
-		[user@host somedir]$ sudo pacman -S cmake clang graphviz
+		[user@host somedir]$ sudo pacman -S cmake clang doxygen graphviz
 	\end{verbatim}
 \end{frame}
 
@@ -112,8 +122,12 @@
 
 \begin{frame}[fragile]
 	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
+
+	\begin{listings}[ht!]
+		\centering
+		\inputminted{cmake}{CMakeList.txt.sample}
+	\end{listings}
 	% Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
-	\inputminted{cmake}{CMakeList.txt.sample}
 
 	Entendamos, este script en más detalle.
 	En este script definimos los requisitos para la construcción, desde
@@ -190,7 +204,7 @@
 \end{frame}
 
 \begin{frame}
-	frametitle{Las tres etapas en CMake}
+	\frametitle{Las tres etapas en CMake}
 	
 	\begin{block}{Etapa de configuración}
 		\begin{itemize}
