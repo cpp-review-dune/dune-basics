@@ -38,6 +38,7 @@ jobs:
           run: |
             sudo chown -R 33333:33333 /work
             cd /work/
+            # https://wiki.archlinux.org/title/TeX_Live#texmf_trees_and_Kpathsea export TEXMFHOME=/foo:$TEXMFHOME
             pushd dune-basics/doc/beamer/cmake
             lualatex --shell-escape cmake.tex
             popd
