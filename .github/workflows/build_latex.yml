@@ -40,7 +40,9 @@ jobs:
             cd /work/
             # https://wiki.archlinux.org/title/TeX_Live#texmf_trees_and_Kpathsea export TEXMFHOME=/foo:$TEXMFHOME
             cmake -S dune-basics -B build
+            cmake --build -t help
             cmake --build build
+            ls -lR build/doc/beamer/
 
       - name: Check pdf files
         run: |
