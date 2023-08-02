@@ -7,7 +7,7 @@
 }
 
 \begin{frame}[fragile]
-	\frametitle{CMake}
+	\frametitle{\href{https://cmake.org}{CMake}}
 	Es un \emph{generador de sistemas de compilación} de código
 	abierto e independiente del compilador o plataforma, es decir,
 	produce instrucciones para otros sistemas de compilación como
@@ -16,38 +16,46 @@
 	También incluye características que permiten la instalación,
 	empaquetamiento y soporte nativo de pruebas de software.
 
-	\
-	
-	Resultados del aprendizaje:
+	\begin{block}{Resultados del aprendizaje}
+		\begin{itemize}
+			\item
+			
+			Construir diversos ejemplos de proyectos de CMake en los
+			lenguajes C/C++/Fortran/Python que construyan ejecutables u
+			objetos compartidos/estáticos/interfaces.
+			
+			\item
+			
+			Correr pruebas con \lstinline{ctest}, \lstinline{catch2},
+			\lstinline{gtest} y \lstinline{pytest}.
+			
+			\item
+			
+			Usar dependencias de terceros en un proyecto CMake.
+		\end{itemize}
+	\end{block}
 
-	\begin{itemize}
-		\item
+	\begin{block}{}
+		\begin{itemize}
+			\item
 
-		Construir diversos ejemplos de proyectos de CMake en los
-		lenguajes C/C++/Fortran/Python que construyan ejecutables u
-		objetos compartidos/estáticos/interfaces.
 
-		\item
+			Está orientado a cualquier estudiante que quiera aprender
+			a usar efectivamente CMake en un proyecto basado en Dune
+			sobre Arch Linux.
+			
+			\item
 
-		Correr pruebas con \lstinline{ctest}, \lstinline{catch2},
-		\lstinline{gtest} y \lstinline{pytest}.
+			No se asume que esté familiarizado con GNU/Linux o C++,
+			pero sí que esté familiarizado con algún lenguaje de
+			programación.
+			
+			\item
 
-		\item
-
-		Usar dependencias de terceros en un proyecto CMake.
-	\end{itemize}
-
-	\
-
-	Está orientado a cualquier estudiante, profesor, investigador,
-	programador que quiera aprender a usar efectivamente CMake en un
-	proyecto basado en Dune sobre Arch Linux.
-
-	\
-
-	No se asume que tenga experiencia en GNU/Linux o C++, pero
-	sí que esté familiarizado con algún lenguaje de programación.
-
+			Los ejemplos y ejercicios han sido probados en Arch
+			Linux.
+		\end{itemize}
+	\end{block}
 	% \lstinline{cmake} es una herramienta para automatizar la
 	% generación de \lstinline{Makefile}.
 	% TODO: Teoría
@@ -102,10 +110,26 @@
 	repositorio \href{https://archlinux.org/packages/extra/x86_64/cmake}{\lstinline{[extra]}}
 
 	\begin{verbatim}
-		[user@host somedir]$ sudo pacman -Syu
-		[user@host somedir]$ sudo pacman -S cmake graphviz plantuml gcovr cppcheck python-cpplint ccache
+		[user@host somedir]$ sudo pacman -Syu # Actualizar
+		[user@host somedir]$ sudo pacman -S cmake clang graphviz
 	\end{verbatim}
 \end{frame}
+
+%https://archlinux.org/packages/extra/x86_64/cmake
+%https://archlinux.org/packages/extra/x86_64/clang
+%https://archlinux.org/packages/extra/x86_64/cppcheck
+%https://archlinux.org/packages/extra/x86_64/doxygen
+%https://archlinux.org/packages/extra/x86_64/graphviz
+%https://archlinux.org/packages/core/any/base-devel
+%https://archlinux.org/packages/extra/any/lcov
+%https://archlinux.org/packages/extra/any/plantuml
+%https://archlinux.org/packages/extra/any/gcovr
+%https://archlinux.org/packages/extra/any/python-cpplint
+%https://archlinux.org/packages/extra/x86_64/ccache
+%https://archlinux.org/packages/extra/x86_64/libpqxx
+%https://archlinux.org/packages/extra/x86_64/protobuf
+%https://archlinux.org/packages/extra/x86_64/tree
+%https://archlinux.org/packages/extra/x86_64/valgrind
 
 \begin{frame}[fragile]
 	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
@@ -122,22 +146,39 @@
 		\item
 
 		\href{https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html}{\lstinline{cmake_minimum_required()}}
+
 		indica la versión mínima de \lstinline{cmake} que requiere para ejecutar.
 
 		\item
 		
 		\href{https://cmake.org/cmake/help/latest/command/project.html}{\lstinline{project()}}
+
 		define el nombre del proyecto, su número de versión y que
 		está escrito en el lenguaje de programación C++.
 		
 		\item
 
 		\href{https://cmake.org/cmake/help/latest/command/set.html}{\lstinline{set()}}
+
 		asigna la variable de entorno, en este caso establece la versión del estándar C++ 20.
+
+
+		\item
+
+		\href{https://cmake.org/cmake/help/latest/command/message.html}{\lstinline{message()}}
+		
+		.
+
+		\item
+
+		\href{https://cmake.org/cmake/help/latest/command/add_subdirectory.html}{\lstinline{add_subdirectory()}}
+
+		.
 
 		\item
 
 		\href{https://cmake.org/cmake/help/latest/command/add_executable.html}{\lstinline{add_executable()}}
+
 		crea un ejecutable a partir de un script en C++.
 	\end{itemize}
 \end{frame}
@@ -207,7 +248,17 @@
 \end{frame}
 
 \begin{frame}
-	.
+	\frametitle{Primeros pasos con CMake}
+	
+	\begin{description}
+		\item[árbol de construcción (build tree)]
+
+		es la ruta al directorio objetivo / salida.
+
+		\item[árbol de fuente (source tree)]
+
+		es la ruta en el que se encuentra su código fuente.
+	\end{description}
 \end{frame}
 
 \begin{frame}
