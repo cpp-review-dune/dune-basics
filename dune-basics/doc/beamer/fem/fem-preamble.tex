@@ -4,10 +4,17 @@
 	xcolor=table,
 	handout,
 	aspectratio=1610,
-	ignorenonframetext
+	%ignorenonframetext
 ]{beamer}
 
 \usepackage[spanish]{babel}
+
+\usepackage[audience=
+english
+%spanish
+%german
+]{beameraudience}
+
 \usepackage[
 	cursointroductorio,
 	fullpagenumbering
@@ -16,10 +23,10 @@
 \usepackage{longtable}
 
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-\addbibresource{dune-docker-references.bib}
+\addbibresource{fem-references.bib}
 
 \title{
-	Introducción a~\docker{}
+	Introducción al método de elementos finitos
 }
 \subtitle{
 	Parte I:
@@ -81,9 +88,3 @@
 		\setlength{\parsep}{\bibparsep}}}
 {\endlist}
 {\item}
-
-\newcommand{\docker}{%
-	\begingroup\normalfont
-	\includegraphics[height=2\fontcharht\font`B]{docker}%
-	\endgroup
-}

@@ -4,29 +4,25 @@
 	xcolor=table,
 	handout,
 	aspectratio=1610,
-	%ignorenonframetext
+	ignorenonframetext
 ]{beamer}
 
 \usepackage[spanish]{babel}
-
-\usepackage[audience=
-english
-%spanish
-%german
-]{beameraudience}
-
 \usepackage[
 	cursointroductorio,
 	fullpagenumbering
-]{dunestyle-beamer}
+]{../dunestyle-beamer}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{minted}
+
+\graphicspath{{../images/}}
 
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-\addbibresource{dune-common-references.bib}
+\addbibresource{cmake-references.bib}
 
 \title{
-	Introducción al método de elementos finitos
+	Introducción a la herramienta cmake~\cmake{}
 }
 \subtitle{
 	Parte I:
@@ -88,3 +84,9 @@ english
 		\setlength{\parsep}{\bibparsep}}}
 {\endlist}
 {\item}
+
+\newcommand{\cmake}{%
+	\begingroup\normalfont
+	\includegraphics[height=2\fontcharht\font`B]{cmake}%
+	\endgroup
+}

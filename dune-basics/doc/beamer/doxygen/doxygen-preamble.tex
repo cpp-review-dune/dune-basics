@@ -15,23 +15,15 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 
-\usepackage[hyperrefcolorlinks,os=win,mackeys=text]{menukeys}
-\renewmenumacro{\keys}[+]{shadowedroundedkeys}
-
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-\addbibresource{dune-command-line-references.bib}
+\addbibresource{doxygen-references.bib}
 
 \title{
-	Introducción al emulador de terminal~\terminal{}
+	Introducción a~\doxygen{}
 }
 \subtitle{
-	Parte I:
-	\lstinline{bash},
-	\lstinline{g++},
-	\lstinline{cmake},
-	\lstinline{gnuplot},
-	\lstinline{gmsh},
-	\lstinline{paraview}
+	Parte III:
+	Uso del comando \lstinline{doxygen}
 }
 
 \author{}
@@ -85,20 +77,8 @@
 {\endlist}
 {\item}
 
-\newcommand{\linux}{%
+\newcommand{\doxygen}{%
 	\begingroup\normalfont
-	\includegraphics[height=2\fontcharht\font`B]{linux}%
-	\endgroup
-}
-
-\newcommand{\gnu}{%
-	\begingroup\normalfont
-	\includegraphics[height=2\fontcharht\font`B]{gnu}%
-	\endgroup
-}
-
-\newcommand{\terminal}{%
-	\begingroup\normalfont
-	\includegraphics[height=2\fontcharht\font`B]{terminal}%
+	\includegraphics[height=2\fontcharht\font`B]{doxygen}%
 	\endgroup
 }

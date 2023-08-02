@@ -1,38 +1,16 @@
 % arara: lualatex: { shell: yes }
 % arara: lualatex: { shell: yes }
-\input{dune-introduction-fem-preamble}
+\input{hdnum-preamble}
 
 \begin{document}
 
 \frame[plain,noframenumbering]{\titlepage}
 
-\framefor{english}
-{
-	{Motivation}
-	\begin{itemize}
-		\item Start with an introduction to the finite element method (FEM) for solving Poisson's equation
-		      with piecewise linear ``P$_1$'' finite elements
-	\end{itemize}
-
-}
-
-\framefor{spanish}
-{
-	{Motivación}
-	\begin{itemize}
-		\item Inicio con una introducción al método de elementos finitos (MEF) para resolver la ecuación de Poisson
-		      con elementos finitos lineales a trozos ``P$_1$''
-	\end{itemize}
-
-}
-
 \begin{frame}
-	\frametitle{Objetivos de esta introdución}
-	A number of advanced.
+	\frametitle{Introducción a HDNUM}
 	\begin{itemize}
-		\item Correr los \href{https://github.com/orgs/cpp-review-dune/packages}{imágenes prediseñadas} con el programa \lstinline{docker} en sistemas tipo Unix.
-		\item Crear una malla con \lstinline{gmsh} a través de la API (C/C++, Python, Julia).
-		\item Realizar los ejemplos resueltos del \textsc{Dune book}.
+		\item Manual
+		\item Instalación \cite{bastian2013heidelberger} traducido.
 	\end{itemize}
 \end{frame}
 

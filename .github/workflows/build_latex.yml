@@ -3,8 +3,8 @@ name: PDFs
 on:
   push:
     branches: [master]
-    # paths:
-    #   - dune-basics/doc/beamer/**
+    paths:
+      - dune-basics/doc/beamer/**
   pull_request:
     branches: [master]
   schedule:
@@ -22,7 +22,7 @@ jobs:
           REPO="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
-          git clone -q --filter=blob:none --no-checkout --depth=1  --sparse $REPO .
+          git clone -q --filter=blob:none --no-checkout --depth=1 --sparse $REPO .
           git sparse-checkout init --cone
           git sparse-checkout set dune-basics
           git checkout
@@ -38,6 +38,9 @@ jobs:
           run: |
             sudo chown -R 33333:33333 /work
             cd /work/
+            pushd dune-basics/doc/beamer/cmake
+            lualatex --shell-escape cmake.tex
+            popd
             cmake -S dune-basics -B build
             cmake --build build
 

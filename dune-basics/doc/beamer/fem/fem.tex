@@ -1,16 +1,52 @@
 % arara: lualatex: { shell: yes }
 % arara: lualatex: { shell: yes }
-\input{dune-hdnum-preamble}
+\input{fem-preamble}
 
 \begin{document}
 
 \frame[plain,noframenumbering]{\titlepage}
 
-\begin{frame}
-	\frametitle{Introducción a HDNUM}
+\framefor{english}
+{
+	{Motivation}
 	\begin{itemize}
-		\item Manual
-		\item Instalación \cite{bastian2013heidelberger} traducido.
+		\item
+		
+		Start with an introduction to the finite element method (FEM)
+		for solving Poisson's equation with piecewise linear
+		``P$_{1}$'' finite elements.
+	\end{itemize}
+
+}
+
+\framefor{spanish}
+{
+	{Motivación}
+	\begin{itemize}
+		\item
+		
+		Inicio con una introducción al método de elementos finitos
+		(MEF) para resolver la ecuación de Poisson con elementos
+		finitos lineales a trozos ``P$_{1}$''.
+	\end{itemize}
+
+}
+
+\begin{frame}
+	\frametitle{Objetivos de esta introdución}
+	A number of advanced.
+	\begin{itemize}
+		\item
+		
+		Correr los \href{https://github.com/orgs/cpp-review-dune/packages}{imágenes prediseñadas} con el programa \lstinline{docker} en sistemas tipo Unix.
+		
+		\item
+		
+		Crear una malla con \lstinline{gmsh} a través de la API (C/C++, Python, Julia).
+		
+		\item
+		
+		Realizar los ejemplos resueltos del \textsc{Dune book}.
 	\end{itemize}
 \end{frame}
 
@@ -47,7 +83,6 @@
 			\bottomrule
 		\end{tabular}
 	\end{table}
-
 \end{frame}
 
 \begin{frame}
@@ -55,17 +90,25 @@
 
 	\begin{description}
 		\item[Simplicidad]
+		
 			Es minimalista.
 			Se usa herramienta pequeñas que sigue la filosofía de UNIX, de modo que tengas una base muy pequeña que deje configurar la máquina de manera más cómoda para el usuario.
+
 		\item[Modernidad]
+
 			Mantener la paquetería lo más actualizada posible sin sacrificar la estabilidad. Cuenta con los compiladores más actuales de \lstinline{gcc}, \lstinline{lualatex}, \lstinline{go}, etc.
+
 		\item[Pragmatismo]
+
 			La gran cantidad de paquetes y scripts de compilación en los diversos repositorios de Arch Linux ofrecen software gratuito y de código abierto para quienes lo prefieren, así como paquetes de software propietario para quienes adoptan la funcionalidad por encima de la ideología.
+
 		\item[Centrado a las usuarias y usuarios]
+
 			La distribución está destinada a satisfacer las necesidades de quienes contribuyen a ella, en lugar de intentar atraer a tantos usuarios como sea posible.
 			Está dirigido al usuario competente de GNU/Linux, o cualquier persona con una actitud de hágalo usted mismo que esté dispuesto a leer la documentación y resolver sus propios problemas.
 			Se anima a todos los usuarios a participar y contribuir a la distribución.
 			Informar y ayudar a corregir errores es muy valioso y los parches que mejoran los paquetes o los proyectos principales son muy apreciados: los desarrolladores de Arch son voluntarios y los contribuyentes activos a menudo se convertirán en parte de ese equipo.
+
 		\item[Versatilidad]
 	\end{description}
 

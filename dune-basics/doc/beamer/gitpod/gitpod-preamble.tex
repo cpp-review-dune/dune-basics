@@ -4,32 +4,32 @@
 	xcolor=table,
 	handout,
 	aspectratio=1610,
-	ignorenonframetext
+	% ignorenonframetext
 ]{beamer}
 
 \usepackage[spanish]{babel}
+
+\usepackage[audience=
+%english
+spanish
+%german
+]{beameraudience}
+
 \usepackage[
 	cursointroductorio,
 	fullpagenumbering
 ]{dunestyle-beamer}
 \usepackage{booktabs}
 \usepackage{longtable}
-\usepackage{minted}
 
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
-\addbibresource{dune-cmake-references.bib}
+%\addbibresource{gitpod-references.bib}
 
 \title{
-	Introducción a la herramienta cmake~\cmake{}
+	Introducción a~\gitpod{}
 }
 \subtitle{
-	Parte I:
-	\lstinline{bash},
-	\lstinline{g++},
-	\lstinline{cmake},
-	\lstinline{gnuplot},
-	\lstinline{gmsh},
-	\lstinline{paraview}
+	Una plataforma de desarrollo basado en contenedores
 }
 
 \author{}
@@ -83,8 +83,8 @@
 {\endlist}
 {\item}
 
-\newcommand{\cmake}{%
+\newcommand{\gitpod}{%
 	\begingroup\normalfont
-	\includegraphics[height=2\fontcharht\font`B]{cmake}%
+	\includegraphics[height=2\fontcharht\font`B]{gitpod}%
 	\endgroup
 }
