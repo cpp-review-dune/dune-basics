@@ -1,1 +1,1 @@
-add_latex_document(SOURCE command-line.tex RCFILE .latexmkrc)
+add_latex_document(SOURCE dune-command-line.tex RCFILE ../.latexmkrc)

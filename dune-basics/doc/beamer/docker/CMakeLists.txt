@@ -1,1 +1,1 @@
-add_latex_document(SOURCE docker.tex RCFILE .latexmkrc)
+add_latex_document(SOURCE dune-docker.tex RCFILE ../.latexmkrc)
