@@ -1,1 +1,1 @@
-add_latex_document(SOURCE gmsh.tex RCFILE .latexmkrc)
+add_latex_document(SOURCE gmsh.tex RCFILE ../.latexmkrc)
