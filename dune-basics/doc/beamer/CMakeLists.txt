@@ -1,5 +1,5 @@
 add_subdirectory("cmake")
 add_subdirectory("command-line")
-#add_subdirectory("docker")
+add_subdirectory("docker")
 #add_subdirectory("doxygen")
 #add_subdirectory("dune-common")

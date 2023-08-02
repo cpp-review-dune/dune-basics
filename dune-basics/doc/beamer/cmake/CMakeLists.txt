@@ -1,1 +1,1 @@
-add_latex_document(SOURCE cmake.tex RCFILE ../.latexmkrc)
+add_latex_document(SOURCE dune-cmake.tex RCFILE ../.latexmkrc)
