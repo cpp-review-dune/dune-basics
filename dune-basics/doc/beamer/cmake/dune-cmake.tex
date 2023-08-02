@@ -7,22 +7,34 @@
 }
 
 \begin{frame}[fragile]
-	\frametitle{\href{https://cmake.org}{CMake}}
+	\frametitle{\href{https://cmake.org}{CMake} ($2000$ - actualidad)}
 	Es un \emph{generador de sistemas de compilación} de código
-	abierto e independiente del compilador o plataforma, es decir,
-	produce instrucciones para otros sistemas de compilación como
-	Makefile, Ninja, Visual Studio, Qt Creator, Android Studio y
-	Xcode.
-	También incluye características que permiten la instalación,
-	empaquetamiento y soporte nativo de pruebas de software.
+	abierto multiplataforma e independiente del compilador, es decir,
+	genera instrucciones para otros sistemas de compilación como
+	\href{https://www.gnu.org/software/make}{GNU Make},
+	\href{https://ninja-build.org}{Ninja}
+	y archivos de proyecto para IDEs populares como
+	\href{https://visualstudio.microsoft.com}{Microsoft Visual Studio},
+	\href{https://eclipseide.org}{Eclipse},
+	\href{https://www.qt.io/product/development-tools}{Qt Creator},
+	\href{https://www.jetbrains.com/clion}{CLion},
+	\href{https://www.codeblocks.org}{Code::Blocks},
+	\href{https://www.sublimetext.com}{Sublime Text},
+	\href{https://kate-editor.org}{Kate},
+	\href{https://developer.android.com/studio}{Android Studio} y
+	\href{https://developer.apple.com/xcode}{Xcode}.
+	Se mantiene centrado en soportar compiladores modernos y cadena
+	de herramientas.
+	Tiene soporte nativo de pruebas de software, empaquetamiento e
+	instalación como una parte inherente del proceso de construcción.
 
 	\begin{block}{Resultados del aprendizaje}
 		\begin{itemize}
 			\item
 			
 			Construir diversos ejemplos de proyectos de CMake en los
-			lenguajes C/C++/Fortran/Python que construyan ejecutables u
-			objetos compartidos/estáticos/interfaces.
+			lenguajes C/C++/Fortran/Python que construyan ejecutables
+			u objetos compartidos/estáticos/interfaces.
 			
 			\item
 			
@@ -35,10 +47,9 @@
 		\end{itemize}
 	\end{block}
 
-	\begin{block}{}
+	\begin{block}{Prerrequisitos}
 		\begin{itemize}
 			\item
-
 
 			Está orientado a cualquier estudiante que quiera aprender
 			a usar efectivamente CMake en un proyecto basado en Dune
@@ -68,38 +79,6 @@
 	% Ejemplo: un ejemplo de álgebra lineal con BLAS del libro de Simon.
 	% Ejemplo: documentación con doxygen (Berner, Rafal).
 	% Ejemplo con ctest: https://coderefinery.github.io/cmake-workshop/testing
-\end{frame}
-
-\begin{frame}[fragile]
-	Tres herramientas de línea de comando:
-
-	\begin{itemize}
-		\item
-		
-		\href{https://man.archlinux.org/man/cmake.1}{\lstinline{/usr/bin/cmake}}
-
-		\item
-		
-		\href{https://man.archlinux.org/man/cpack.1}{\lstinline{/usr/bin/cpack}}
-
-		\item
-		
-		\href{https://man.archlinux.org/man/ctest.1}{\lstinline{/usr/bin/ctest}}
-	\end{itemize}
-
-	\
-
-	Tres herramientas interactivas:
-
-	\begin{itemize}
-		\item
-		
-		\href{https://man.archlinux.org/man/ccmake.1}{\lstinline{/usr/bin/ccmake}}
-
-		\item
-		
-		\href{https://man.archlinux.org/man/cmake-gui.1}{\lstinline{/usr/bin/cmake-gui}}
-	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -133,8 +112,7 @@
 
 \begin{frame}[fragile]
 	\frametitle{Un archivo \lstinline{CMakeLists.txt} minimal}
-	Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
-
+	% Supongamos que tenemos el siguiente script \lstinline{CMakeLists.txt}
 	\inputminted{cmake}{CMakeList.txt.sample}
 
 	Entendamos, este script en más detalle.
@@ -183,9 +161,160 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Primeros pasos con CMake}
+	Esperemamos automatizar la construcción escribiendo un script que vaya a través
+	de nuestro árbol del proyecto que compile todo.
+
+	Este escript debe evitar compilaciones innecesarias y detecte cuando el script ha sido modificado
+	desde la última vez que corrimos.
+
+	También debe conocer cómo enlazar todos los archivos compilados en un binario.
+
+	CMake no puede construir por sí mismo, este delega la tarea a otras herramientas
+	en el sistema para desarrollar la compilación actual, enlace y otras tareas.
+
+	Puede pensar como el orquestador del proceso de construcción
+	(sabe qué pasos necesita realizarse, cuál es el objetivo final y cómo encontrar a los
+	trabajadores correctos y materiales para el trabajo)
+	
+	\begin{description}
+		\item[árbol de construcción (build tree)]
+
+		es la ruta al directorio objetivo / salida.
+
+		\item[árbol de fuente (source tree)]
+
+		es la ruta en el que se encuentra su código fuente.
+	\end{description}
+\end{frame}
+
+\begin{frame}
+	frametitle{Las tres etapas en CMake}
+	
+	\begin{block}{Etapa de configuración}
+		\begin{itemize}
+			\item
+
+			Lee los detalles del proyecto guardados en el árbol de construcción
+			y preparará un árbol de construcción para la etapa de generación.
+			
+			\item
+
+			Crea un árbol de construcción vacío y colecciona los detalles del entorno
+			en el que se trabaja (arquitectura, compiladores disponibles, enlazadores,
+			revisa un problema de prueba simple que puede compilar correctamente.
+			archivos)
+			
+			
+						\item
+
+El archivo de configuración del proyecto es analizado y ejecutado (en lenguaje CMake).
+Le dice acerca de la estructura del proyecto, objetivos, dependencias (bibliotecas y paquetes CMake).
+			
+						\item
+			
+						Guarda información recolectada en el árbol de construcción
+						como detalles del sistema, configuración del proyecto, registros,
+						archivos temporales; que serán usados en la siguiente etapa.
+
+						\item
+
+						El archivo \lstinline{CMakeCache.txt} es creador para guardar
+						variables estables (rutas del compilador y otras herramientas)
+						y ahoora tiempo durante la siguiente configuración.
+					\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Etapa de generación}
+		\begin{itemize}
+			\item
+
+			Generará un sistema de construcción para el entorno
+			exacto en el que trabaja (\lstinline{Makefile} para GNU Make, \lstinline{Ninja} o IDE).
+
+			\item
+
+			Puede aplicar toques finales de la configuración evaluando
+			expresiones generadoras.
+		\end{itemize}
+	\end{block}
+
+	\begin{block}{Etapa de construcción}
+		\begin{itemize}
+			\item
+
+			Corriendo las herramientas de construcción apropiadas
+			obtendremos los artefactos.
+
+			\item
+
+			Estas heramientas ejecutarán pasos para producir objetivos
+			con compiladores, enlazadores, herramientas de análisis
+			estático, frameworks de prueba, herramientas de reporte,
+			y cualquier otra cosa que pueda pensar.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
 \begin{frame}[fragile]
-	\frametitle{El proceso de construcción CMake}
-	.
+	\frametitle{Aprendiendo la línea de comando}
+	\begin{block}{Herramientas de línea de comando}
+		\begin{itemize}
+			\item
+			
+			\href{https://man.archlinux.org/man/cmake.1}{\lstinline{/usr/bin/cmake}}
+
+			ejecutable principal que configura, genera y construye proyectos.
+			
+			\item
+			
+			\href{https://man.archlinux.org/man/ctest.1}{\lstinline{/usr/bin/ctest}}
+			
+			programa de manejador de pruebas usado para correr y
+			reportar resultados de pruebas.
+
+			\item
+			
+			\href{https://man.archlinux.org/man/cpack.1}{\lstinline{/usr/bin/cpack}}
+
+			este es el programa de empaquetamiento usado para generar
+			el instalador y paquete de origen.
+		\end{itemize}
+	\end{block}
+		
+	\begin{block}{Herramientas interactivas}
+		\begin{itemize}
+			\item
+
+			\href{https://man.archlinux.org/man/cmake-gui.1}{\lstinline{/usr/bin/cmake-gui}}
+
+			envoltorio gráfico alrededor de \lstinline{cmake}.
+			
+			\item
+			
+			\href{https://man.archlinux.org/man/ccmake.1}{\lstinline{/usr/bin/ccmake}}
+
+			envoltorio en modo texto
+			(\href{https://es.wikipedia.org/wiki/Curses}{curses}) alrededor de \lstinline{cmake}.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\lstinline{/usr/bin/cmake}}
+	Este binario provee algunos modos de operaciones
+
+	\begin{block}{Generación de un sistema de construcción del proyecto}
+		Este es el primer paso requerido para construir nuestro
+		proyecto.
+	\end{block}
+	
+	\begin{block}{Construcción de un proyecto}
+		.
+	\end{block}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -245,44 +374,6 @@
 	Es un script asistente escrito en el lenguaje \lstinline{bash}
 	que se encuentra en \lstinline{/usr/bin/duneproject}
 	dentro del paquete \lstinline{dune-common}.
-\end{frame}
-
-\begin{frame}
-	\frametitle{Primeros pasos con CMake}
-	
-	\begin{description}
-		\item[árbol de construcción (build tree)]
-
-		es la ruta al directorio objetivo / salida.
-
-		\item[árbol de fuente (source tree)]
-
-		es la ruta en el que se encuentra su código fuente.
-	\end{description}
-\end{frame}
-
-\begin{frame}
-	.
-\end{frame}
-
-\begin{frame}
-	.
-\end{frame}
-
-\begin{frame}
-	.
-\end{frame}
-
-\begin{frame}
-	.
-\end{frame}
-
-\begin{frame}
-	.
-\end{frame}
-
-\begin{frame}
-	.
 \end{frame}
 
 \begin{frame}\transblindsvertical
