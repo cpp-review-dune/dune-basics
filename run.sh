@@ -9,3 +9,5 @@ fi
 [ -d build/dune-env ] || python -m venv --system-site-packages build/dune-env
 cmake -S dune-basics -B build
 cmake --build build
+cmake --build build --target doxygen_dune-basics
+# python -m http.server -d build/doc/doxygen/html 8000
