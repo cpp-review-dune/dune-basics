@@ -1,6 +1,6 @@
 Repository      : arch4edu
 Name            : gmsh
-Version         : 4.11.1-3
+Version         : 4.12.0-1
 Description     : An automatic 3D finite element mesh generator with pre and post-processing facilities.
 Architecture    : x86_64
 URL             : https://gmsh.info
@@ -16,5 +16,5 @@ Replaces        : None
 Download Size   : 9.44 MiB
 Installed Size  : 41.87 MiB
 Packager        : Unknown Packager
-Build Date      : Mon Jul 17 10:46:31 2023
+Build Date      : Thu 21 Dec 2023 03:23:14
 Validated By    : MD5 Sum  SHA-256 Sum  Signature
